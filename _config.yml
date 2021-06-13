@@ -20,6 +20,9 @@ plugins:
   - jekyll-paginate
   - jemoji
 
+collections:
+    - pages
+
 paginate: 8
 paginate_path: "/page/:num"
 
