@@ -16,7 +16,7 @@ layout: main
 {% endfor %}
 -->
 
-{% for page in paginator.pages %}
+{% for page in site.pages %}
 <article class="page">
   {% if page.img %}
     <a class="page-thumbnail" style="background-image: url({{"/assets/img/" | prepend: site.baseurl | append : page.img}})" href="{{page.url | prepend: site.baseurl}}"></a>
