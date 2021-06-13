@@ -13,12 +13,6 @@ author:  # add your name
 author-img:  # add your photo
 about-author:  # add description
 
-# Disqus
-discus-identifier: # add your discus identifier
-
-# Tracker
-analytics: # Google Analytics
-
 # Build Settings
 markdown: kramdown
 plugins:
