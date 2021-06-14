@@ -11,11 +11,6 @@ email: #
 highlighter: rouge
 markdown: kramdown
 
-# Pagination
-paginate: 4
-permalink: /blog/:year/:title/
-paginate_path: /blog/page:num/
-
 # Social media links in footer
 facebook: "#"
 twitter: "#"
@@ -59,7 +54,5 @@ exclude:
   - LICENSE.md
 
 plugins:
-  - jekyll-seo-tag
-  - jekyll-paginate
   - jekyll-email-protect
   - jekyll-target-blank
