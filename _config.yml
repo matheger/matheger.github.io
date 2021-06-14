@@ -3,8 +3,8 @@
 title: Your Name
 description: subtitle | affiliations | motto
 
-baseurl: #name of GitHub repository
-url: https://matheger.github.io/ #custom url to be used instead of GitHub repository
+baseurl: /gradfolio #name of GitHub repository
+url: #custom url to be used instead of GitHub repository
 email: #
 
 
@@ -13,8 +13,8 @@ markdown: kramdown
 
 # Pagination
 paginate: 4
-permalink: /:title/
-paginate_path: /page:num/
+permalink: /blog/:year/:title/
+paginate_path: /blog/page:num/
 
 # Social media links in footer
 facebook: "#"
@@ -26,6 +26,9 @@ orcid: "#"
 
 highlighter: rouge
 markdown: kramdown
+
+# Tracker
+analytics:
 
 #optimization -> compress.html
 compress_html:
