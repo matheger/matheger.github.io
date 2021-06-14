@@ -35,9 +35,6 @@ a {
 
   &:hover{
     color: $text-color;
-
-    @media (prefers-color-scheme: dark) {
-      color: $text-color-dark;
     }
 }
 
