@@ -5,15 +5,16 @@ $small-font-size:  $base-font-size * 0.75; // originally 0.875
 $base-line-height: 1.7;
 
 $spacing-unit:     30px;
-$light-gray: gray;
+$light-gray:       gray;
 $text-color:       #333;
 $background-color: #fdfdfd;
-$brand-color:      #60c17d;
+//$brand-color:      #60c17d;
+$brand-color:      #00c2c2;
 
 // Color scheme for light
 $body-bg: #fdfdfd;
-//$projectbox: #cfe6a4;
-$projectbox: #7FC9FF;
+// $projectbox: #cfe6a4;
+$projectbox: #00e0e0;
 $text-color: #333;
 
 // Color scheme for dark modes
