@@ -1,30 +1,65 @@
-title: ---
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-permalink: ':title/'
-baseurl: "/" # the subpath of your site, e.g. /blog
-url: "https://matheger.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-site-twitter: #if your site has a twitter account, enter it here
+### your site title here
 
-# Author Settings
-author:  # add your name
-author-img:  # add your photo
-about-author:  # add description
+title: Your Name
+description: subtitle | affiliations | motto
 
-# Build Settings
+baseurl: /gradfolio #name of GitHub repository
+url: #custom url to be used instead of GitHub repository
+email: #
+
+
+highlighter: rouge
 markdown: kramdown
-plugins:
-  - jekyll-sitemap
-  - jekyll-paginate
-  - jemoji
 
+# Pagination
+paginate: 4
+permalink: /blog/:year/:title/
+paginate_path: /blog/page:num/
+
+# Social media links in footer
+facebook: "#"
+twitter: "#"
+linkedin: "#"
+github: "#"
+researchgate: "#"
+orcid: "#"
+
+highlighter: rouge
+markdown: kramdown
+
+# Tracker
+analytics:
+
+#optimization -> compress.html
+compress_html:
+  clippings: [html,div, p, ul, td, h1, h2, h3, h4,link, meta, footer, nav, img, header, hr, br, head, style, li, ul, ol, time, main, script, title]
+  comments: ["<!-- ", " -->"]
+  endings: [all]
+  ignore:
+    envs: [local]
+  blanklines: false
+  profile: false
+  startings: []
+
+#collection
 collections:
-    pages:
-        output = true
+  projects:
+    output: true
+    permalink: /projects/:path/
 
-paginate: 8
-paginate_path: "/page/:num"
+sass:
+  sass_dir: /assets/css/_sass
+  style: compressed
 
-exclude: ["node_modules", "gulpfile.js", "package.json", "yarn.lock"]
+include:
+  - _pages
+
+exclude:
+  - README.md
+  - LICENSE.md
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-paginate
+  - jekyll-email-protect
+  - jekyll-target-blank
