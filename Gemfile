@@ -1,3 +1,7 @@
-source 'https://rubygems.org'
+ource 'https://rubygems.org'
 
-gem 'jekyll-jupyter-notebook'
+gem 'jekyll'
+
+group :jekyll_plugins do
+    gem 'jekyll-jupyter-notebook'
+end
