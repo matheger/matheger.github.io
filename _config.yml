@@ -46,6 +46,6 @@ exclude:
   - LICENSE.md
 
 plugins:
-  - jekull-jupyter-notebook
+  - jekyll-jupyter-notebook
   - jekyll-email-protect
   - jekyll-target-blank
