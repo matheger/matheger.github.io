@@ -13,8 +13,8 @@ markdown: kramdown
 
 # Pagination
 paginate: 4
-permalink: /blog/:year/:title/
-paginate_path: /blog/page:num/
+permalink: /:title/
+paginate_path: /page:num/
 
 # Social media links in footer
 facebook: "#"
@@ -26,9 +26,6 @@ orcid: "#"
 
 highlighter: rouge
 markdown: kramdown
-
-# Tracker
-analytics:
 
 #optimization -> compress.html
 compress_html:
