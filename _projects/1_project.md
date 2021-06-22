@@ -100,9 +100,7 @@ that last line which continues item 3 above).
 
 Here's a link to [a website](http://foo.bar), to a [local
 doc](local-doc.html), and to a [section heading in the current
-doc](#an-h2-header). Here's a footnote [^1].
-
-[^1]: Some footnote text.
+doc](#an-h2-header). Here's a footnote.[^1]
 
 Tables can look like this:
 
@@ -158,7 +156,7 @@ and images can be specified like so:
 5
 
 ![example image](/assets/1_project/example-image.jpg "An exemplary image")
-{: width="10px" height="10px" style="text-align:center"}
+{: width="50px" height="50px" style="text-align:center"}
 
 
 Inline math equation: $$\omega = d\phi / dt$$. Display math should get its own line like so:
@@ -169,4 +167,7 @@ And note that you can backslash-escape any punctuation characters
 which you wish to be displayed literally, ex.: \`foo\`, \*bar\*, etc.
 
 
-549
+22
+
+
+[^1]: Some footnote text.
