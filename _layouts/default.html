@@ -15,8 +15,13 @@
         {% include navigation.html %}
 
         {% include favicon.html %}
-
-        <!-- Load fontawesome here for faster loadtimes: https://stackoverflow.com/a/35880730/9523246 -->
+		
+		<!-- uncomment if clause to require 'use_math: true' to be set in front matter of a page -->
+		<!-- {% if page.use_math %} -->
+		{% include mathjax_support.html %}
+		<!-- {% endif %} -->
+        
+		<!-- Load fontawesome here for faster loadtimes: https://stackoverflow.com/a/35880730/9523246 -->
         <script type="text/javascript"> (function() { var css = document.createElement('link'); css.href = 'https://use.fontawesome.com/releases/v5.11.0/css/all.css'; css.rel = 'stylesheet'; css.type = 'text/css'; document.getElementsByTagName('head')[0].appendChild(css); })(); </script>
 
     </head>
