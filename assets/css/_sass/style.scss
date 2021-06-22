@@ -170,13 +170,14 @@ blockquote {
 
 
 
-/* added as per https://stackoverflow.com/questions/25276923/ to make footnote text smaller */
-.footnotes {
-  font-size: 0.8*$base-font-size;
+/* make footnotes smaller */
+.footnote, .footnotes {
+  font-size: 0.7*$base-font-size;
 }
 
 
-/* https://stackoverflow.com/questions/3912694/ */
+
+/* https://stackoverflow.com/questions/3912694/ for centering */
 .center {
   text-align: center;
 }
