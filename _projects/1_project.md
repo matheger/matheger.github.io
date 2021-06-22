@@ -164,6 +164,7 @@ $$I = \int \rho R^{2} dV$$
 And note that you can backslash-escape any punctuation characters
 which you wish to be displayed literally, ex.: \`foo\`, \*bar\*, etc.
 
+{:.center}
 <div markup=0 class='tableauPlaceholder' id='viz1624325704590'>
 	<noscript>
 		<a href='#'>
@@ -192,13 +193,12 @@ which you wish to be displayed literally, ex.: \`foo\`, \*bar\*, etc.
 <script type='text/javascript'>
 	var divElement = document.getElementById('viz1624325704590');
 	var vizElement = divElement.getElementsByTagName('object')[0];
-	vizElement.style.width='200px';
+	vizElement.style.width='auto';
 	vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
-	vizElement.style.align='center';
 	var scriptElement = document.createElement('script');
 	scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);
 </script>
 
-44
+45
 
 [^1]: Some footnote text.
