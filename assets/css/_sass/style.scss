@@ -75,11 +75,6 @@ img {
   max-width: 100%;
 }
 
-/* https://dzone.com/articles/how-to-style-images-with-markdown to center images */
-img[src*="#center"] {
-  text-align: center;
-}
-
 
 pre,
 code {
@@ -173,12 +168,15 @@ blockquote {
 .scroll::-webkit-scrollbar {
   display: none; }
 
+
+
 /* added as per https://stackoverflow.com/questions/25276923/ to make footnote text smaller */
-.footnote {
+.footnotes {
   font-size: 0.8*$base-font-size;
 }
 
-.footnotebody {
-  font-size: 30pt;
-}
 
+/* https://stackoverflow.com/questions/3912694/ */
+.center {
+  text-align: center;
+}
