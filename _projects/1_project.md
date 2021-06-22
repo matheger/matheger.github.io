@@ -164,7 +164,7 @@ $$I = \int \rho R^{2} dV$$
 And note that you can backslash-escape any punctuation characters
 which you wish to be displayed literally, ex.: \`foo\`, \*bar\*, etc.
 
-<div markup=0 class='tableauPlaceholder' id='viz1624325704590'>
+<div markup=0 class='tableauPlaceholder' id='viz1624325704590' style='width:200px'>
 	<noscript>
 		<a href='#'>
 			<img alt='Average Number of Rides Started on Workdays and Weekends ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;GO&#47;GOOGLE_DA-CaseStudy1-Rideshare&#47;RidesonWorkdaysWeekends&#47;1_rss.png' style='border: none' />
@@ -199,6 +199,6 @@ which you wish to be displayed literally, ex.: \`foo\`, \*bar\*, etc.
 </script>
 
 
-54390
+2345
 
 [^1]: Some footnote text.
