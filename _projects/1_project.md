@@ -193,7 +193,7 @@ which you wish to be displayed literally, ex.: \`foo\`, \*bar\*, etc.
 	var divElement = document.getElementById('viz1624325704590');
 	var vizElement = divElement.getElementsByTagName('object')[0];
 	vizElement.style.text-align='center';
-	vizElement.style.width='auto';
+	vizElement.style.width='200px';
 	vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
 	var scriptElement = document.createElement('script');
 	scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);
