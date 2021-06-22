@@ -166,3 +166,8 @@ blockquote {
 
 .scroll::-webkit-scrollbar {
   display: none; }
+
+/* added as per https://stackoverflow.com/questions/25276923/ to make footnote text smaller */
+a.footnote {
+  font-size: 0.7*$base-font-size;
+}
