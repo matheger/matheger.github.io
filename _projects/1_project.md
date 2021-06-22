@@ -171,15 +171,22 @@ and images can be specified like so:
 
 ![example image](/assets/1_project/example-image.jpg "An exemplary image"){: width="50%" height="50%"}
 
+5
 
-Inline math equation: $$omega = d\phi / dt$$. Display
-math should get its own line like so:
+![example image](/assets/1_project/example-image.jpg "An exemplary image"){: width="50px" height="50px"}
+
+6
+
+![example image](/assets/1_project/example-image.jpg "An exemplary image"){: width="0.5" height="0.5"}
+
+
+Inline math equation: $$\omega = d\phi / dt$$. Display math should get its own line like so:
 
 $$I = \int \rho R^{2} dV$$
 
 And note that you can backslash-escape any punctuation characters
-which you wish to be displayed literally, ex.: \`foo\`, \*bar\*, etc.
+which you wish to be displayed literally, ex.: \(`foo\)`, \*bar\*, etc.
 
 
 
-21608
+692
