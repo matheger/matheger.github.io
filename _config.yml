@@ -34,6 +34,9 @@ collections:
     output: true
     permalink: /projects/:path/
 
+kramdown:
+    math-engine: katex
+
 sass:
   sass_dir: /assets/css/_sass
   style: compressed
