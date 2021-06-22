@@ -155,29 +155,13 @@ Here's a "line block" (note how whitespace is honored):
 
 and images can be specified like so:
 
-1
-
-![example image](/assets/1_project/example-image.jpg "An exemplary image"){: width=50}
-
-2
-
-![example image](/assets/1_project/example-image.jpg "An exemplary image"){: size=0.5}
-
-3
-
-![example image](/assets/1_project/example-image.jpg "An exemplary image"){: size="50%"}
-
-4
-
-![example image](/assets/1_project/example-image.jpg "An exemplary image"){: width="50%" height="50%"}
-
 5
 
 ![example image](/assets/1_project/example-image.jpg "An exemplary image"){: width="50px" height="50px"}
 
 6
 
-![example image](/assets/1_project/example-image.jpg "An exemplary image"){: width="0.5" height="0.5"}
+![example image](/assets/1_project/example-image.jpg "An exemplary image"){: width=50 height=50 style="center"}
 
 
 Inline math equation: $$\omega = d\phi / dt$$. Display math should get its own line like so:
@@ -188,5 +172,4 @@ And note that you can backslash-escape any punctuation characters
 which you wish to be displayed literally, ex.: \`foo\`, \*bar\*, etc.
 
 
-
-692
+1586
