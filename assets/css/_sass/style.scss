@@ -171,11 +171,7 @@ blockquote {
 
 
 /* make footnotes smaller */
-.footnote {
-  font-size: 0.5*$base-font-size;
-}
-
-.footnotes {
+.footnote, .footnotes {
   font-size: 0.75*$base-font-size;
 }
 
