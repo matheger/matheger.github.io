@@ -15,11 +15,8 @@
 
         {% include favicon.html %}
 
-		<!-- Mathjax Support, as per https://lyk6756.github.io/2016/11/25/write_latex_equations.html -->
-		<script type="text/javascript" async
-		  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-		</script>
-		
+		{% include mathjax_support.html %}
+
 		<!-- Load fontawesome here for faster loadtimes: https://stackoverflow.com/a/35880730/9523246 -->
         <script type="text/javascript"> (function() { var css = document.createElement('link'); css.href = 'https://use.fontawesome.com/releases/v5.11.0/css/all.css'; css.rel = 'stylesheet'; css.type = 'text/css'; document.getElementsByTagName('head')[0].appendChild(css); })(); </script>
 
