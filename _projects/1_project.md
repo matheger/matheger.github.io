@@ -164,14 +164,14 @@ $$I = \int \rho R^{2} dV$$
 And note that you can backslash-escape any punctuation characters
 which you wish to be displayed literally, ex.: \`foo\`, \*bar\*, etc.
 
-<div markup=0 class='tableauPlaceholder' id='viz1624325704590'>
+<div markup=0 class='tableauPlaceholder' id='viz1624325704590' style='width:200px'>
 	<noscript>
 		<a href='#'>
 			<img alt='Average Number of Rides Started on Workdays and Weekends ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;GO&#47;GOOGLE_DA-CaseStudy1-Rideshare&#47;RidesonWorkdaysWeekends&#47;1_rss.png' style='border: none' />
 		</a>
 	</noscript>
 
-	<object class='tableauViz'  style='display:none; width:200px'>
+	<object class='tableauViz'  style='display:none'>
 		<param name='dataDetails' value='no' />
 		<param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
 		<param name='embed_code_version' value='3' /> 
@@ -198,6 +198,6 @@ which you wish to be displayed literally, ex.: \`foo\`, \*bar\*, etc.
 	scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);
 </script>
 
-499
+199
 
 [^1]: Some footnote text.
