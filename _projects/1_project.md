@@ -154,13 +154,17 @@ Here's a "line block" (note how whitespace is honored):
 | Line tree
 
 and images can be specified like so:
+
 1
+
 ![example image](/assets/1_project/example-image.jpg "An exemplary image"){: width=50}
 
 2
+
 ![example image](/assets/1_project/example-image.jpg "An exemplary image"){: size=0.5}
 
 3
+
 ![example image](/assets/1_project/example-image.jpg "An exemplary image"){: size="50%"}
 
 Inline math equation: $\omega = d\phi / dt$. Display
@@ -173,4 +177,4 @@ which you wish to be displayed literally, ex.: \`foo\`, \*bar\*, etc.
 
 
 
-591
+5691
