@@ -155,7 +155,7 @@ Here's a "line block" (note how whitespace is honored):
 
 and images can be specified like so:
 
-![example image](/assets/1_project/example-image.jpg "An exemplary image")
+![example image](/assets/1_project/example-image.jpg "An exemplary image"){width: 200px}
 
 Inline math equation: $\omega = d\phi / dt$. Display
 math should get its own line like so:
@@ -167,4 +167,4 @@ which you wish to be displayed literally, ex.: \`foo\`, \*bar\*, etc.
 
 Average Number of Rides Started on Workdays and Weekends
 
-241
+259
