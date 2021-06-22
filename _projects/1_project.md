@@ -167,7 +167,7 @@ and images can be specified like so:
 
 ![example image](/assets/1_project/example-image.jpg "An exemplary image"){: size="50%"}
 
-Inline math equation: $\omega = d\phi / dt$. Display
+Inline math equation: \(omega = d\phi / dt\). Display
 math should get its own line like so:
 
 $$I = \int \rho R^{2} dV$$
