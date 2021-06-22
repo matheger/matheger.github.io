@@ -155,7 +155,7 @@ and images can be specified like so:
 
 5
 
-![example image](/assets/1_project/example-image.jpg#center "An exemplary image")
+![example image](/assets/1_project/example-image.jpg#center)
 {:height="50px" width="50px"}
 
 
