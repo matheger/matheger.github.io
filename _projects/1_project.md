@@ -171,7 +171,7 @@ which you wish to be displayed literally, ex.: \`foo\`, \*bar\*, etc.
 		</a>
 	</noscript>
 
-	<object class='tableauViz'  style='display:none;'>
+	<object class='tableauViz'  style='display:none; width:200px'>
 		<param name='dataDetails' value='no' />
 		<param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
 		<param name='embed_code_version' value='3' /> 
@@ -198,6 +198,6 @@ which you wish to be displayed literally, ex.: \`foo\`, \*bar\*, etc.
 	scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);
 </script>
 
-999
+499
 
 [^1]: Some footnote text.
