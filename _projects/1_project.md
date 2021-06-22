@@ -155,7 +155,7 @@ and images can be specified like so:
 
 5
 
-![example image](/assets/1_project/example-image.jpg "An exemplary image"){: width="50px" height="50px" style="text-align:center"}
+![example image](/assets/1_project/example-image.jpg "An exemplary image"){:height="50%" width="50%"}
 
 
 Inline math equation: $$\omega = d\phi / dt$$. Display math should get its own line like so:
@@ -165,8 +165,6 @@ $$I = \int \rho R^{2} dV$$
 And note that you can backslash-escape any punctuation characters
 which you wish to be displayed literally, ex.: \`foo\`, \*bar\*, etc.
 
-
-23
-
+5o9
 
 [^1]: Some footnote text.
