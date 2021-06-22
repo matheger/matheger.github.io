@@ -168,6 +168,10 @@ blockquote {
   display: none; }
 
 /* added as per https://stackoverflow.com/questions/25276923/ to make footnote text smaller */
+.footnote {
+  font-size: 0.4*$base-font-size;
+}
+
 .footnotelist {
   font-size: 1.2*$base-font-size;
 }
