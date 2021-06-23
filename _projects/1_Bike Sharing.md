@@ -9,7 +9,7 @@ Preamble
 
 This project is one of the suggested capstone projects that conclude the Coursera Google Data Analytics Certificate.
 
-All data in this project was warehoused in a local Microsoft SQL Management Server installation. Data transformation and analysis was carried out using [KNIME Analytics Platform](https://www.knime.com), a powerful and extensible open-source software for graphical data analysis and data science. Visualizations were created using [Tableau Public](https://www.tableau.com).
+All data in this project was warehoused in a local [Microsoft SQL Server](https://www.microsoft.com/sql-server/) installation. Data transformation and analysis was carried out using [KNIME Analytics Platform](https://www.knime.com), a powerful and extensible open-source software for graphical data analysis and data science. Visualizations were created using [Tableau Public](https://www.tableau.com).
 
 Scenario
 ========
@@ -25,14 +25,12 @@ To conduct our analysis, we use one year's worth of data describing the rides th
 
 Within the downloaded zip archives, we find csv files ranging from ca. 10 to 110 megabyte in size. The files contain the following information about each ride made with company bikes: 
 
-* `ride_id`
-  : a unique ride identifier; 
-* `rideable_type`
-  : the type of bicycle used; 
-  * `started_at` and `ended_at`: the start and end date- and time stamps; 
-  * `start_station_name`, `start_station_id`, and their `end_station_` equivalents: names and identifiers for the start and end stations; 
-  * `start_lat`, `start_lon`, and their `end_` equivalents: the latitude and longitude of the start and end stations; and
-  * `member_casual`: the customer type that carried out the trip. 
+* `ride_id`: a unique identifier for each record; 
+* `rideable_type`: the type of bicycle used; 
+* `started_at` and `ended_at`: the start and end date- and time stamps; 
+* `start_station_name`, `start_station_id`, and their `end_station_` equivalents: names and identifiers for the start and end stations; 
+* `start_lat`, `start_lon`, and their `end_` equivalents: the latitude and longitude of the start and end stations; and
+* `member_casual`: the customer type that carried out the trip. 
 
 For the given timeframe, a total of XXXXXXXX records is recovered from the raw data files.
 
