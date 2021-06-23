@@ -38,10 +38,16 @@ One obvious limitation of the data set is the absence of any further information
 
 Given the large number of records, it is infeasible to approach the data set using spreadsheet software such as Microsoft Excel. Instead, let us first upload the data from all csv files into a single "raw" SQL table, `_RideData_Raw`. At this stage, we store all fields as `varchar` types without assigning a primary key.
 
-```sql
+{% highlight sql %}
 SELECT *
 FROM _RideData_Raw
-```
+{% highlight %}
+
+
+{% highlight python %}
+for i in range(10):
+	pass
+{% highlight %}
 
 
 Data Cleaning
@@ -70,7 +76,6 @@ Wrap-Up
 ...
 
 
-
-234
+124
 
 [^1]: While the company in the capstone project for the Google Data Analytics course is made out to be fictional, it has a real-life equivalent: [Divvy](https://www.divvybikes.com), from which we also take the openly available data sets for analysis.
