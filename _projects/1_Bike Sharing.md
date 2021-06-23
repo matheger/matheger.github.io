@@ -49,7 +49,7 @@ for i in range(10):
 	pass
 {% endhighlight %}
 
-95
+35
 
 Data Cleaning
 =============
