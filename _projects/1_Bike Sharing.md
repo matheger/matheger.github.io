@@ -5,7 +5,7 @@ description: Analysis of publicly available data from a bike sharing company
 ---
 
 Preamble
-============
+========
 
 This project is one of the suggested capstone projects that conclude the Coursera Google Data Analytics Certificate.
 
@@ -18,27 +18,52 @@ In this scenario, we find ourselves employed with a fictional bike-sharing compa
 
 The director of marketing believes that the best way forward for the company is to focus on converting casual customers into subscribed members. To this end, we are tasked with analyzing how these two different customer types differ in their use of the bike-sharing service, and identifying strategies to most effectively approach casual customers and advertise an upgrade to a membership.
 
-Data Acquisition and Description
+Data Acquisition and Preparation
+================================
 
 To conduct our analysis, we use one year's worth of data describing the rides that both casual and subscribed customers have made with the company's biked. The data is taken from the publicly available download page of [Divvy](https://www.divvybikes.com) (accessed XX Jun 2021) and covers a timeframe from XX April 2020 to XX April 2021.
 
 Within the downloaded zip archives, we find csv files ranging from ca. 10 to 110 megabyte in size. The files contain the following information about each ride made with company bikes: 
 
-  * `ride_id`: a unique ride identifier; 
-  * `rideable_type`: the type of bicycle used; 
+* `ride_id`
+  : a unique ride identifier; 
+* `rideable_type`
+  : the type of bicycle used; 
   * `started_at` and `ended_at`: the start and end date- and time stamps; 
-  * `start_station_name`, `start_station_id` and `end_station` equivalents: names and identifiers for the start and end stations; 
-  * `start_lat`, `start_lon` and `end` equivalents: the latitude and longitude of the start and end stations; and
+  * `start_station_name`, `start_station_id`, and their `end_station_` equivalents: names and identifiers for the start and end stations; 
+  * `start_lat`, `start_lon`, and their `end_` equivalents: the latitude and longitude of the start and end stations; and
   * `member_casual`: the customer type that carried out the trip. 
 
 For the given timeframe, a total of XXXXXXXX records is recovered from the raw data files.
 
 One obvious limitation of the data set is the absence of any further information on the copmany's customer base. Specifically, we are unable to tell what proportion of rides are taken by returning customers, and how many subscribed customers the company actually has.
 
-Data Preparation and Cleaning
-
 Given the large number of records, it is infeasible to approach the data set using spreadsheet software such as Microsoft Excel. Instead, let us first upload the data from all csv files into a single "raw" SQL table. (DATA TYPES?) 
 
+Data Cleaning
+=============
+
+...
+
+Data Analysis
+=============
+
+...
+
+Key Insights
+============
+
+...
+
+Odds and Ends
+=============
+
+...
+
+Wrap-Up
+=======
+
+...
 
 
 
