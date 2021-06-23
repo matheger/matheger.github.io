@@ -73,6 +73,6 @@ Wrap-Up
 
 
 
-
+394
 
 [^1]: While the company in the capstone project for the Google Data Analytics course is made out to be fictional, it has a real-life equivalent: [Divvy](https://www.divvybikes.com), from which we also take the openly available data sets for analysis.
