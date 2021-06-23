@@ -45,7 +45,7 @@ After unpacking all csv files into a dedicated folder (and setting them to write
 
 {: .center}
 ![KNIME workflow for full upload of raw data](/assets/1_project/Full Raw Upload KNIME Workflow.png){: height="50%" width="50%"}
-KNIME workflow for full upload of raw data
+*KNIME workflow for full upload of raw data*
 
 Data Cleaning
 -------------
