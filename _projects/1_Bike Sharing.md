@@ -40,7 +40,7 @@ Given the large number of records, it is infeasible to approach the data set usi
 
 ```sql
 SELECT *
-FROM _RideData_Raw
+from _RideData_Raw
 ```
 
 
@@ -49,7 +49,7 @@ for i in range(10):
 	pass
 {% endhighlight %}
 
-527
+446
 
 Data Cleaning
 =============
