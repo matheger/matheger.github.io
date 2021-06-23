@@ -43,6 +43,11 @@ SELECT *
 FROM _RideData_Raw
 ~~~
 
+~~~python
+for i in range(10):
+  pass
+~~~
+
 Data Cleaning
 =============
 
