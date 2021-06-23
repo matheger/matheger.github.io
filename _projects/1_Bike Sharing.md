@@ -38,10 +38,10 @@ One obvious limitation of the data set is the absence of any further information
 
 Given the large number of records, it is infeasible to approach the data set using spreadsheet software such as Microsoft Excel. Instead, let us first upload the data from all csv files into a single "raw" SQL table, `_RideData_Raw`. At this stage, we store all fields as `varchar` types without assigning a primary key.
 
-~~~mysql
+``` sql
 SELECT *
 FROM _RideData_Raw
-~~~
+```
 
 
 Data Cleaning

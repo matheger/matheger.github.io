@@ -7,15 +7,9 @@ baseurl: / #name of GitHub repository
 url: https://matheger.github.io #custom url to be used instead of GitHub repository
 email: #
 
-highlighter: pandoc
+#highlighter: pandoc # pandoc is not supported by github pages
+highlighter: rouge
 markdown: kramdown
-
-# old values didn't work?
-#highlighter: rouge
-#markdown: kramdown
-
-# Tracker
-analytics:
 
 #optimization -> compress.html
 compress_html:
