@@ -1,16 +1,18 @@
 ----
 layout: post
 title: How Does a Bike-Share Navigate Speedy Success?
+description: Analysis of publicly available data from a bike sharing company
 ----
 
 Preamble
-========
+============
 
 This project is one of the suggested capstone projects that conclude the Coursera Google Data Analytics Certificate.
 
 All data in this project was warehoused in a local Microsoft SQL Management Server installation. Data transformation and analysis was carried out using [KNIME Analytics Platform](https://www.knime.com), a powerful and extensible open-source software for graphical data analysis and data science. Visualizations were created using [Tableau Public](https://www.tableau.com).
 
-# Scenario
+Scenario
+========
 
 In this scenario, we find ourselves employed with a fictional bike-sharing company in Chicago that offers thousands of available bikes across hundreds of docking stations throughout the city.[^1] Customers can unlock and ride the bikes between these stations by buying either single-ride or single-day passes (classifying them as "casual" customers) or becoming subscribed members through an annual fee.
 
