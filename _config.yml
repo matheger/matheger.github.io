@@ -12,10 +12,10 @@ highlighter: rouge
 markdown: kramdown
 
 # Markdown Processors
-kramdown:
-  input: GFM
-  auto_ids: true
-  syntax_highlighter: rouge
+#kramdown:
+#  input: GFM
+#  auto_ids: true
+#  syntax_highlighter: rouge
   
 #optimization -> compress.html
 compress_html:
