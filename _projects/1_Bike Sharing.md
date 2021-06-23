@@ -36,9 +36,9 @@ For the given timeframe, a total of XXXXXXXX records is recovered from the raw d
 
 One obvious limitation of the data set is the absence of any further information on the copmany's customer base. Specifically, we are unable to tell what proportion of rides are taken by returning customers, and how many subscribed customers the company actually has.
 
-Given the large number of records, it is infeasible to approach the data set using spreadsheet software such as Microsoft Excel. Instead, let us first upload the data from all csv files into a single "raw" SQL table. (DATA TYPES?) 
+Given the large number of records, it is infeasible to approach the data set using spreadsheet software such as Microsoft Excel. Instead, let us first upload the data from all csv files into a single "raw" SQL table, `_RideData_Raw`. At this stage, we store all fields as `varchar` types without assigning a primary key.
 
-~~~sql
+~~~mysql
 select 
 	*
 from RideData_Raw
