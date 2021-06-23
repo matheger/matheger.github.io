@@ -1,9 +1,10 @@
 ----
-layout
+layout: post
 title: How Does a Bike-Share Navigate Speedy Success?
 ----
 
-# Preamble
+Preamble
+========
 
 This project is one of the suggested capstone projects that conclude the Coursera Google Data Analytics Certificate.
 
