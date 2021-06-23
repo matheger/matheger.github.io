@@ -41,13 +41,13 @@ Given the large number of records, it is infeasible to approach the data set usi
 {% highlight sql %}
 SELECT *
 FROM _RideData_Raw
-{% highlight %}
+{% endhighlight %}
 
 
 {% highlight python %}
 for i in range(10):
 	pass
-{% highlight %}
+{% endhighlight %}
 
 
 Data Cleaning
