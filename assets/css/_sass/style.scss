@@ -82,7 +82,6 @@ code {
   font-size: 0.8*$base-font-size;
   border-radius: 3px;
   border: 1px solid $code-border;
-  background: $code-background;
   > code {
     border: none;
   }
@@ -95,6 +94,9 @@ pre {
 code {
   padding: 0.1em;
   width: 0.8*$content-width;
+  background: $code-background;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 blockquote {
