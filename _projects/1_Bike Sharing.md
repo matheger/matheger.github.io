@@ -50,8 +50,7 @@ After unpacking all csv files into a dedicated folder (and setting them to write
 Data Cleaning
 -------------
 
-A cursory look at the raw data reveals 
-
+aaa
 
 Data Analysis
 =============
