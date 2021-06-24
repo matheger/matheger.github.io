@@ -28,6 +28,14 @@ h1,h2,h3,h4,h5,h6 {
   text-transform: inherit;
 }
 
+h1 {
+  font-size: 1.55*$base-font-size;
+}
+
+h2 {
+  font-size: 1.25*$base-font-size;
+}
+
 
 a {
   color: $brand-color;
@@ -75,13 +83,12 @@ img {
   max-width: 100%;
 }
 
-
 pre,
 code {
   overflow: auto;
-  font-size: 0.7*$base-font-size;
+  font-size: $small-font-size;
   border-radius: 3px;
-  border: 1px solid $brand-color;
+  border: 1px solid $code-border;
   > code {
     border: none;
   }
@@ -93,6 +100,10 @@ pre {
 
 code {
   padding: 0.1em;
+  width: 80%;
+  background: $code-background;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 blockquote {
@@ -176,10 +187,20 @@ blockquote {
 }
 
 
-
 /* https://stackoverflow.com/questions/3912694/ for centering */
 .center {
   text-align: center;
+}
+
+/* centered image and caption style */
+.center-image{
+  text-align: center;
+  font-style: italic;
+  font-size: $small-font-size;
+  text-color: $caption-color;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 
