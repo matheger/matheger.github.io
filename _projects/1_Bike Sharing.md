@@ -44,7 +44,7 @@ Given the large number of records, it is infeasible to approach the data set usi
 After unpacking all csv files into a dedicated folder (and setting them to write-only access to avoid inadvertent modification), we construct a KNIME workflow that loops over all of these files and inserts their data into the SQL table.
 
 {:.center-image}
-[![KNIME workflow for full upload of raw data](/assets/1_project/Full Raw Upload KNIME Workflow.png){: height="100%" width="100%"}](/assets/1_project/Full Raw Upload KNIME Workflow.png)  
+![KNIME workflow for full upload of raw data](/assets/1_project/Full Raw Upload KNIME Workflow.png){: height="80%" width="80%"}]  
 *KNIME workflow for full upload of raw data*
 
 Data Cleaning
