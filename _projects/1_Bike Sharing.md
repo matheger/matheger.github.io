@@ -4,6 +4,8 @@ title: How Does a Bike-Share Navigate Speedy Success?
 description: Analysis of publicly available data from a bike sharing company
 ---
 
+{:toc}
+
 Preamble
 ========
 
