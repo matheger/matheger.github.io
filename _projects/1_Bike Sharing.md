@@ -4,10 +4,11 @@ title: How Does a Bike-Share Navigate Speedy Success?
 description: Analysis of publicly available data from a bike sharing company
 ---
 
+{:no_toc}
+* asdf
 {:toc}
 
-Preamble
-========
+# Preamble
 
 This project is one of the suggested capstone projects that conclude the Coursera Google Data Analytics Certificate.
 
