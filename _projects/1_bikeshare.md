@@ -4,6 +4,8 @@ title: How Does a Bike-Share Navigate Speedy Success?
 description: Analysis of publicly available data from a bike sharing company
 ---
 
+133
+
 {:no_toc}
 * toc
 {:toc}
@@ -128,5 +130,3 @@ One obvious limitation of the data set is the absence of any further information
 [^station_loc_jitter]: Presumably, these are GPS coordinates reported by transmitters on the bikes themselves, not a fixed value assigned to the station.
 
 [^temp_stations_retained]: This is a somewhat arbitrary decision. We could easily argue for eliminating the temporary stations as well and merging them with the "main" ones. 
-
-133
