@@ -206,6 +206,17 @@ blockquote {
   }
 }
 
+/* custom tableau placeholder definitions */
+.tableauPlaceholder {
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+
+  /* need to add bottom margin, otherwise the tableau toolbar
+  will cover the caption */
+    margin-bottom: 20px;  
+}
+
 .caption {
   text-align: center;
   font-style: italic;
@@ -216,11 +227,4 @@ blockquote {
   margin-right: auto;
   /* undo line spacing to move caption closer to preceding element */
   margin-top: -0.8*$base-line-height*$base-font-size; 
-}
-
-/* custom tableau placeholder definitions */
-.tableauPlaceholder {
-	margin-left: auto;
-  margin-right: auto;
-  width: auto;
 }

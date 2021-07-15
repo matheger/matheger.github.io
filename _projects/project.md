@@ -170,8 +170,7 @@ which you wish to be displayed literally, ex.: \`foo\`, \*bar\*, etc.
 			<img alt='Average Number of Rides Started on Workdays and Weekends ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;GO&#47;GOOGLE_DA-CaseStudy1-Rideshare&#47;RidesonWorkdaysWeekends&#47;1_rss.png' style='border: none' />
 		</a>
 	</noscript>
-
-	<object class='tableauViz'  style='display:none'>
+	<object class='tableauViz'  style='display:none' width="50%" height="50%">
 		<param name='dataDetails' value='no' />
 		<param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
 		<param name='embed_code_version' value='3' /> 
