@@ -43,7 +43,7 @@ After unpacking all csv files into a dedicated folder (and setting them to write
 
 {:.center-image}
 [
-![Full Raw Upload KNIME Workflow.png](/assets/images/bikeshare/FullRawUploadKNIMEWorkflow.png){: height="70%" width="70%"}
+![Full Raw Upload KNIME Workflow.png](/bikeshare_assets/FullRawUploadKNIMEWorkflow.png){: height="70%" width="70%"}
 ](bikeshare_assets/FullRawUploadKNIMEWorkflow.png)  
 
 {:.caption}
