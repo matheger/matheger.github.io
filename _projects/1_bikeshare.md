@@ -127,7 +127,7 @@ To start out with our analysis, we sort all ride durations into 30-minute bins a
 {% include assets/embed/bikeshare/ridesduration.html %}
 
 {:.caption}
-Number of trips by duration (30-minute bins) and customer type
+254 Number of trips by duration (30-minute bins) and customer type
 
 In the introductory notes to the project, we are given the interesting piece of information that about 30% of customers use the company's biked to cycle to work. It seems that this distribution of ride durations might be a clue! In order to dig deeper into this behaviour of our riders, let's take a look at the average number of rides started by the different customers within each hour of the day, differentiated into weekdays and weekends.
 
