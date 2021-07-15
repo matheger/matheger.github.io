@@ -132,19 +132,7 @@ To start out with our analysis, we sort all ride durations into 30-minute bins a
 In the introductory notes to the project, we are given the interesting piece of information that about 30% of customers use the company's biked to cycle to work. It seems that this distribution of ride durations might be a clue! In order to dig deeper into this behaviour of our riders, let's take a look at the average number of rides started by the different customers within each hour of the day, differentiated into weekdays and weekends.
 
 {:.tableauPlaceholder}
-<div class='tableauPlaceholder' id='viz1626311994834' style='position: relative'><noscript><a href='#'><img alt='Average Number of Rides Started on Workdays and Weekends ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;GO&#47;GOOGLE_DA-CaseStudy1-Rideshare&#47;RidesonWorkdaysWeekends&#47;1_rss.png' style='border: none' /></a></noscript>
-	<object class='tableauViz'  style='display:none;' width='690' height='400'>
-	<param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='GOOGLE_DA-CaseStudy1-Rideshare&#47;RidesonWorkdaysWeekends' /><param name='tabs' value='no' /><param name='toolbar' value='no' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;GO&#47;GOOGLE_DA-CaseStudy1-Rideshare&#47;RidesonWorkdaysWeekends&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' />		<param name='showShareOptions' value='false' />
-</object>
-</div>
-
-<script type='text/javascript'>                    
-var divElement = document.getElementById('viz1626311994834');                    
-var vizElement = divElement.getElementsByTagName('object')[0];                    
-var scriptElement = document.createElement('script');                    
-scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
-vizElement.parentNode.insertBefore(scriptElement, vizElement);                
-</script>
+{% include_relative bikeshare_assets/tableau_ridesperhour %}
 
 {:.caption}
 Trips started within each hour during weekdays and weekends
