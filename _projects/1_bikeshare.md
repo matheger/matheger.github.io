@@ -10,7 +10,7 @@ description: Analysis of publicly available data from a bike sharing company
 
 # Preamble
 
-This project is one of the suggested capstone projects that conclude the Coursera Google Data Analytics Certificate.
+This project is one of the suggested capstone projects that conclude the [Google Data Analytics Certificate](https://www.coursera.org/professional-certificates/google-data-analytics).
 
 All data in this project was warehoused in a local [Microsoft SQL Server](https://www.microsoft.com/sql-server/) installation. Data transformation and analysis was carried out using [KNIME Analytics Platform](https://www.knime.com), a powerful and extensible open-source software for graphical data analysis and data science. Visualizations were created using [Tableau Public](https://www.tableau.com).
 
@@ -86,7 +86,9 @@ At this point, we have a data set of 3,553,496 valid and unique ride records.
 
 # Data Analysis
 
-...
+To start out with our analysis, we sort all ride durations into 30-minute bins and investigate their frequency. The results already paint a very interesting picture: The vast majority (about 78%) of all recorded trips is less than 30 minutes long. Subscribed members make twice as many of these trips as casual customers. Conversely, trips of more than 30 minutes are taken more often by casual customers than by members. The question then is: Why do subscribed members prefer shorter trips by such a big margin?
+
+In the introductory notes to the project, we are given the interesting piece of information that about 30% of customers use the company's biked to cycle to work. It seems that this distribution of ride durations might be a 
 
 # Key Insights
 
@@ -103,7 +105,7 @@ At this point, we have a data set of 3,553,496 valid and unique ride records.
 
 # SNIPPETS
 
-One obvious limitation of the data set is the absence of any further information on the copmany's customer base. Specifically, we are unable to tell what proportion of rides are taken by returning customers, and how many subscribed customers the company actually has.
+One obvious limitation of the data set is the absence of any further information on the company's customer base. Specifically, we are unable to tell what proportion of rides are taken by returning customers, and how many subscribed customers the company actually has.
 
 
 [^fictional_company_name]: While the company in the capstone project for the Google Data Analytics course is made out to be fictional, it has a real-life equivalent: [Divvy](https://www.divvybikes.com), from which we also take the openly available data sets for analysis.
