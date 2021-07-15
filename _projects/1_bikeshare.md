@@ -89,45 +89,10 @@ At this point, we have a data set of 3,553,496 valid and unique ride records.
 To start out with our analysis, we sort all ride durations into 30-minute bins and investigate their frequency. The results already paint a very interesting picture: The vast majority (about 78%) of all recorded trips are less than 30 minutes long, and members make twice as many of these trips as casual customers. Conversely, trips of more than 30 minutes are taken more often by casual customers than by members. This of course begs the question: Why do subscribed members prefer shorter trips by such a big margin?
 
 {:.tableauPlaceholder}
-<!--div markup=0 class='tableauPlaceholder' id='viz1626309379780' style='position: relative;'>
-	<noscript>
-		<a href='#'>
-			<img alt='Number of Rides by Duration ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;GO&#47;GOOGLE_DA-CaseStudy1-Rideshare&#47;RidesbyDuration&#47;1_rss.png' style='border: none' />
-		</a>
-	</noscript>
-	<object class='tableauViz'  style='display:none;' width='630' height='480'>
-		<param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
-		<param name='embed_code_version' value='3' /> 
-		<param name='site_root' value='' />
-		<param name='name' value='GOOGLE_DA-CaseStudy1-Rideshare&#47;RidesbyDuration' />
-		<param name='tabs' value='no'/>
-		<param name='toolbar' value='no'/>
-		<param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;GO&#47;GOOGLE_DA-CaseStudy1-Rideshare&#47;RidesbyDuration&#47;1.png' /> 
-		<param name='showShareOptions' value='false' />
-		<param name='animate_transition' value='yes' />
-		<param name='display_static_image' value='yes' />
-		<param name='display_spinner' value='yes' />
-		<param name='display_overlay' value='no' />
-		<param name='display_count' value='yes' />
-		<param name='language' value='en-US' />
-		<param name='filter' value='publish=yes' />
-	</object>
-</div>                
-
-<script type='text/javascript'>                    
-	var divElement = document.getElementById('viz1626309379780');                    
-	var vizElement = divElement.getElementsByTagName('object')[0];                    
-	//vizElement.style.width='100%';
-	//vizElement.style.height=(divElement.offsetWidth*0.75)+'px';  
-	var scriptElement = document.createElement('script');                  
-	scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';  
-	vizElement.parentNode.insertBefore(scriptElement, vizElement);               
-</script-->
-
 {% include_relative bikeshare_assets/tableau_ridesduration.embed %}
 
 {:.caption}
-254 Number of trips by duration (30-minute bins) and customer type
+Number of trips by duration (30-minute bins) and customer type
 
 In the introductory notes to the project, we are given the interesting piece of information that about 30% of customers use the company's biked to cycle to work. It seems that this distribution of ride durations might be a clue! In order to dig deeper into this behaviour of our riders, let's take a look at the average number of rides started by the different customers within each hour of the day, differentiated into weekdays and weekends.
 
