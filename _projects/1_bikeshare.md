@@ -124,7 +124,7 @@ To start out with our analysis, we sort all ride durations into 30-minute bins a
 	vizElement.parentNode.insertBefore(scriptElement, vizElement);               
 </script-->
 
-{% include_relative tableau_ridesduration.html %}
+{% include_relative 01_bikeshare_include/tableau_ridesduration.html %}
 
 {:.caption}
 Number of trips by duration (30-minute bins) and customer type
