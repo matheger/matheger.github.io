@@ -44,7 +44,7 @@ After unpacking all csv files into a dedicated folder (and setting them to write
 {:.center-image}
 [
 ![Full Raw Upload KNIME Workflow.png](/assets/images/bikeshare/FullRawUploadKNIMEWorkflow.png){: height="70%" width="70%"}
-](/assets/images/bikeshare/FullRawUploadKNIMEWorkflow.png)  
+](bikeshare_assets/FullRawUploadKNIMEWorkflow.png)  
 
 {:.caption}
 The KNIME workflow used for full raw data upload
@@ -68,7 +68,7 @@ During the process of this data cleaning, we also notice that some of the statio
 {:.center-image}
 [
 ![StationsV02.png](/assets/images/bikeshare/StationsV02.png){: height="70%" width="70%"}
-](/assets/images/bikeshare/StationsV02.png)
+](bikeshare_assets/StationsV02.png)
 
 {:.caption}
 Excerpt of the station location data
@@ -124,7 +124,7 @@ To start out with our analysis, we sort all ride durations into 30-minute bins a
 	vizElement.parentNode.insertBefore(scriptElement, vizElement);               
 </script-->
 
-{% include_relative ../assets/embed/bikeshare/ridesduration.html %}
+{% include_relative bikeshare_assets/tableau_ridesduration.embed %}
 
 {:.caption}
 254 Number of trips by duration (30-minute bins) and customer type
