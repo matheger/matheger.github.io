@@ -162,10 +162,9 @@ Inline math equation: $$\omega = d\phi / dt$$. Display math should get its own l
 $$I = \int \rho R^{2} dV$$
 
 ~~~python
->>> class self:
-...     def __init__(self):
-...         self.self: self = self
-...
+class self:
+	def __init__(self):
+		self.self: self = self
 
 >>> self = self()
 
@@ -180,6 +179,29 @@ $$I = \int \rho R^{2} dV$$
 
 >>> self.self.self.self
 <__main__.self object at 0x00000180E2064C40>
+~~~
+
+
+~~~python
+class i_am_spartacus:
+    def __new__(self):
+        return no_i_am_spartacus
+    
+class no_i_am_spartacus:
+    def __new__(self):
+        return i_am_spartacus
+
+>>> i_am_spartacus()
+__main__.no_i_am_spartacus
+
+>>> i_am_spartacus()()
+__main__.i_am_spartacus
+
+>>> i_am_spartacus()()()
+__main__.no_i_am_spartacus
+
+>>> i_am_spartacus()()()()
+__main__.i_am_spartacus
 ~~~
 
 And note that you can backslash-escape any punctuation characters
