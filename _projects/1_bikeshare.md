@@ -89,7 +89,7 @@ At this point, we have a data set of 3,553,496 valid and unique ride records.
 To start out with our analysis, we sort all ride durations into 30-minute bins and investigate their frequency. The results already paint a very interesting picture: The vast majority (about 78%) of all recorded trips is less than 30 minutes long. Subscribed members make twice as many of these trips as casual customers. Conversely, trips of more than 30 minutes are taken more often by casual customers than by members. The question then is: Why do subscribed members prefer shorter trips by such a big margin?
 
 {:.tableauPlaceholder}
-<div markup=0 class='tableauPlaceholder' id='viz1626309379780' style='position: relative;'>
+<!--div markup=0 class='tableauPlaceholder' id='viz1626309379780' style='position: relative;'>
 	<noscript>
 		<a href='#'>
 			<img alt='Number of Rides by Duration ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;GO&#47;GOOGLE_DA-CaseStudy1-Rideshare&#47;RidesbyDuration&#47;1_rss.png' style='border: none' />
@@ -122,7 +122,9 @@ To start out with our analysis, we sort all ride durations into 30-minute bins a
 	var scriptElement = document.createElement('script');                  
 	scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';  
 	vizElement.parentNode.insertBefore(scriptElement, vizElement);               
-</script>
+</script-->
+
+{% include 01_bikeshare_include/tableau_ridesduration.html %}
 
 {:.caption}
 Number of trips by duration (30-minute bins) and customer type
