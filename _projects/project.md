@@ -161,6 +161,27 @@ Inline math equation: $$\omega = d\phi / dt$$. Display math should get its own l
 
 $$I = \int \rho R^{2} dV$$
 
+~~~python
+>>> class self:
+...     def __init__(self):
+...         self.self: self = self
+...
+
+>>> self = self()
+
+>>> self
+<__main__.self object at 0x00000180E2064C40>
+
+>>> self.self
+<__main__.self object at 0x00000180E2064C40>
+
+>>> self.self.self
+<__main__.self object at 0x00000180E2064C40>
+
+>>> self.self.self.self
+<__main__.self object at 0x00000180E2064C40>
+~~~
+
 And note that you can backslash-escape any punctuation characters
 which you wish to be displayed literally, ex.: \`foo\`, \*bar\*, etc.
 
