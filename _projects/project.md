@@ -154,7 +154,7 @@ Here's a "line block" (note how whitespace is honored):
 and images can be specified like so:
 
 {: .center}
-![example image](/assets/1_project/example-image.jpg){:height="100px" width="100px"}
+<!--![example image](/assets/1_project/example-image.jpg){:height="100px" width="100px"}-->
 
 
 Inline math equation: $$\omega = d\phi / dt$$. Display math should get its own line like so:
