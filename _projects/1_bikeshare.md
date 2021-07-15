@@ -86,7 +86,7 @@ At this point, we have a data set of 3,553,496 valid and unique ride records.
 
 # Data Analysis
 
-To start out with our analysis, we sort all ride durations into 30-minute bins and investigate their frequency. The results already paint a very interesting picture: The vast majority (about 78%) of all recorded trips is less than 30 minutes long. Subscribed members make twice as many of these trips as casual customers. Conversely, trips of more than 30 minutes are taken more often by casual customers than by members. The question then is: Why do subscribed members prefer shorter trips by such a big margin?
+To start out with our analysis, we sort all ride durations into 30-minute bins and investigate their frequency. The results already paint a very interesting picture: The vast majority (about 78%) of all recorded trips are less than 30 minutes long, and members make twice as many of these trips as casual customers. Conversely, trips of more than 30 minutes are taken more often by casual customers than by members. This of course begs the question: Why do subscribed members prefer shorter trips by such a big margin?
 
 {:.tableauPlaceholder}
 <!--div markup=0 class='tableauPlaceholder' id='viz1626309379780' style='position: relative;'>
