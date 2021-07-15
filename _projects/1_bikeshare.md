@@ -90,6 +90,12 @@ At this point, we have a data set of 3,553,496 valid and unique ride records.
 
 To start out with our analysis, we sort all ride durations into 30-minute bins and investigate their frequency. The results already paint a very interesting picture: The vast majority (about 78%) of all recorded trips are less than 30 minutes long, and members make twice as many of these trips as casual customers. Conversely, trips of more than 30 minutes are taken more often by casual customers than by members. This of course begs the question: Why do subscribed members prefer shorter trips by such a big margin?
 
+{:.tableauPlaceholder}
+{% include_relative ./bikeshare_assets/tableau_ridesduration.embed %}
+
+{:.caption}
+Number of trips by duration (30-minute bins) and customer type
+
 In the introductory notes to the project, we are given the interesting piece of information that about 30% of customers use the company's biked to cycle to work. It seems that this distribution of ride durations might be a clue! In order to dig deeper into this behaviour of our riders, let's take a look at the average number of rides started by the different customers within each hour of the day, differentiated into weekdays and weekends.
 
 During weekends, casual and subscribed customers do not show much of a difference in their ride behaviour. During weekdays, however, the difference is striking! Members significantly outperform casual customers here, with two very distinct spikes in the number of rides around 7 to 8 am, and 5 pm. This seems to corroborate what was mentioned to us about "Biking to work;" and at the same time, we can see that this is much more popular with members than with casual customers.  
