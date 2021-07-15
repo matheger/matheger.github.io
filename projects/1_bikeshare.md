@@ -67,7 +67,7 @@ During the process of this data cleaning, we also notice that some of the statio
 
 {:.center-image}
 [
-![StationsV02.png](/assets/images/bikeshare/StationsV02.png){: height="70%" width="70%"}
+![StationsV02.png](bikeshare_assets/StationsV02.png){: height="70%" width="70%"}
 ](bikeshare_assets/StationsV02.png)
 
 {:.caption}
