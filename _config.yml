@@ -35,7 +35,6 @@ sass:
 
 include:
   - _pages
-#  - _projects
 
 exclude:
   - README.md
