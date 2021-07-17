@@ -10,8 +10,6 @@ description: Analysis of publicly available data from a bike sharing company
 
 # Preamble
 
-133
-
 This project is one of the suggested capstone projects that conclude the [Google Data Analytics Certificate](https://www.coursera.org/professional-certificates/google-data-analytics).
 
 All data in this project was warehoused in a local [Microsoft SQL Server](https://www.microsoft.com/sql-server/) installation. Data transformation and analysis was carried out using [KNIME Analytics Platform](https://www.knime.com), a powerful and extensible open-source software for graphical data analysis and data science. Visualizations were created using [Tableau Public](https://www.tableau.com).
@@ -104,6 +102,7 @@ In the introductory notes to the project, we are given the interesting piece of 
 During weekends, casual and subscribed customers do not show much of a difference in their ride behaviour. During weekdays, however, the difference is striking! Members significantly outperform casual customers in the number of rides, with two very distinct spikes around 7 am and 5 pm. This seems to corroborate what was mentioned to us about "Biking to work;" and at the same time, we can see that this is much more popular with members than with casual customers.
 
 From the spatial distribution of rides on the map and the size of the markers for each station, we can also tell that most of them are started around the Downtown area of Chicago. No surprise here. What is interesting, however, is the colour coding of the markers, which indicates the balance of members vs. casual customers starting their rides at each station. The stations with a higher patronage of casual customers than members (blue hues) tend to aggregate on the eastern edge of the city along the coastline, whereas the western, inland parts are dominated by subscribed members. In other words: This map tells us *where* to find the casual customers to which we want to advertise our subscription model.
+
 
 
 # Key Insights
