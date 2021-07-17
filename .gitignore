@@ -4,3 +4,5 @@ _site/
 .jekyll-cache
 Gemfile.lock
 matheger.sublime-project
+_jekyll build watch.bat
+_python http server.bat
