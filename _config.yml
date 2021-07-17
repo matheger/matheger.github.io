@@ -4,7 +4,8 @@ title: Your Name
 description: subtitle | affiliations | motto
 
 baseurl: #name of GitHub repository
-url: http://localhost:8000 #https://matheger.github.io #custom url to be used instead of GitHub repository
+#url: http://localhost:8000 #custom url to be used instead of GitHub repository
+url: https://matheger.github.io 
 email: #
 
 #highlighter: pandoc # pandoc is not supported by github pages
@@ -34,7 +35,8 @@ sass:
 
 include:
   - _pages
-
+  - _projects
+  
 exclude:
   - README.md
   - LICENSE.md

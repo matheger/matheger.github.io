@@ -161,41 +161,51 @@ Inline math equation: $$\omega = d\phi / dt$$. Display math should get its own l
 
 $$I = \int \rho R^{2} dV$$
 
+~~~python
+class self:
+	def __init__(self):
+		self.self: self = self
+
+>>> self = self()
+
+>>> self
+<__main__.self object at 0x00000180E2064C40>
+
+>>> self.self
+<__main__.self object at 0x00000180E2064C40>
+
+>>> self.self.self
+<__main__.self object at 0x00000180E2064C40>
+
+>>> self.self.self.self
+<__main__.self object at 0x00000180E2064C40>
+~~~
+
+
+~~~python
+class i_am_spartacus:
+    def __new__(self):
+        return no_i_am_spartacus
+    
+class no_i_am_spartacus:
+    def __new__(self):
+        return i_am_spartacus
+
+>>> i_am_spartacus()
+__main__.no_i_am_spartacus
+
+>>> i_am_spartacus()()
+__main__.i_am_spartacus
+
+>>> i_am_spartacus()()()
+__main__.no_i_am_spartacus
+
+>>> i_am_spartacus()()()()
+__main__.i_am_spartacus
+~~~
+
 And note that you can backslash-escape any punctuation characters
 which you wish to be displayed literally, ex.: \`foo\`, \*bar\*, etc.
-
-<div markup=0 class='tableauPlaceholder' id='viz1624325704590'>
-	<noscript>
-		<a href='#'>
-			<img alt='Average Number of Rides Started on Workdays and Weekends ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;GO&#47;GOOGLE_DA-CaseStudy1-Rideshare&#47;RidesonWorkdaysWeekends&#47;1_rss.png' style='border: none' />
-		</a>
-	</noscript>
-	<object class='tableauViz'  style='display:none' width="50%" height="50%">
-		<param name='dataDetails' value='no' />
-		<param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
-		<param name='embed_code_version' value='3' /> 
-		<param name='site_root' value='' />
-		<param name='name' value='GOOGLE_DA-CaseStudy1-Rideshare&#47;RidesonWorkdaysWeekends' />
-		<param name='tabs' value='no' />
-		<param name='toolbar' value='no' />
-		<param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;GO&#47;GOOGLE_DA-CaseStudy1-Rideshare&#47;RidesonWorkdaysWeekends&#47;1.png' /> 
-		<param name='animate_transition' value='yes' />
-		<param name='display_static_image' value='yes' />
-		<param name='display_spinner' value='yes' />
-		<param name='display_overlay' value='yes' />
-		<param name='display_count' value='yes' />
-		<param name='language' value='en-US' />
-	</object>
-</div>
-
-<script type='text/javascript'>
-	var divElement = document.getElementById('viz1624325704590');
-	var vizElement = divElement.getElementsByTagName('object')[0];
-	vizElement.style.width='690px';
-	vizElement.style.height='410px';
-	var scriptElement = document.createElement('script');
-	scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);
-</script>
 
 1399
 
