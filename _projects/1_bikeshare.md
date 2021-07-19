@@ -4,6 +4,9 @@ title: How Does a Bike-Share Navigate Speedy Success?
 description: Analysis of publicly available data from a bike sharing company
 ---
 
+{:.center-image}
+![](/projects/bikeshare_assets/bikeshare_logo.svg){: height="150px"}
+
 {:no_toc}
 * toc
 {:toc}
@@ -91,19 +94,21 @@ To start out with our analysis, we sort all ride durations into 30-minute bins a
 {:.tableauPlaceholder}
 {% include_relative bikeshare_assets/tableau_ridesduration.html %}
 
-{:.caption}
-Number of trips by duration (30-minute bins) and customer type
+When investigating rider behaviour, another interesting question comes to mind: Do people generally return bikes to the same stations where they started their trips, or do they drop them off at a different one? Let's call the first type a "Roundtrip" and the second one an "A-to-B trip." By grouping all rides in the data into one of these categories, we find the following picture:
+
+{:.tableauPlaceholder}
+{% include_relative bikeshare_assets/tableau_triptype.html %}
+
+Clearly, roundtrips are *far* more prevalent than A-to-B trips across both customer types.
 
 In the introductory notes to the project, we are given the interesting piece of information that about 30% of customers use the company's biked to cycle to work. It seems that this distribution of ride durations might be a clue! In order to dig deeper into this behaviour of our riders, let's take a look at the spatial and temporal distribution of rides both during workdays and weekends.
 
 {:.tableauPlaceholder}
 {% include_relative bikeshare_assets/tableau_timemap.html %}
 
-During weekends, casual and subscribed customers do not show much of a difference in their ride behaviour. During weekdays, however, the difference is striking! Members significantly outperform casual customers in the number of rides, with two very distinct spikes around 7 am and 5 pm. This seems to corroborate what was mentioned to us about "Biking to work;" and at the same time, we can see that this is much more popular with members than with casual customers.
+During weekends, casual and subscribed customers do not show much of a difference in their ride behaviour. On workdays, however, the difference is striking! Members significantly outperform casual customers in the number of rides, with two very distinct spikes around 7 am and 5 pm. This seems to corroborate what was mentioned to us about "Biking to work"; we can see that this is much more popular with members than with casual customers.
 
 From the spatial distribution of rides on the map and the size of the markers for each station, we can also tell that most of them are started around the Downtown area of Chicago. No surprise here. What is interesting, however, is the colour coding of the markers, which indicates the balance of members vs. casual customers starting their rides at each station. The stations with a higher patronage of casual customers than members (blue hues) tend to aggregate on the eastern edge of the city along the coastline, whereas the western, inland parts are dominated by subscribed members. In other words: This map tells us *where* to find the casual customers to which we want to advertise our subscription model.
-
-
 
 # Key Insights
 
