@@ -110,6 +110,11 @@ blockquote {
   font-style: italic;
 }
 
+summary {
+  color: $brand-color;
+  font-weight: bold;
+}
+
 .headline, .post-headline {
   font-size: 2em;
   margin-bottom: -0.4em;
@@ -117,6 +122,17 @@ blockquote {
   @include media-query($on-palm) {
     font-size: 2em;
   }
+}
+
+.tagline {
+  color:  #666;
+  font-style: italic;
+  /*font-weight: bold;*/
+  font-size: 0.9 * $base-font-size;
+  
+  /* adjust spacing - move closer to header and further from nav links */
+  margin-top: -0.3*$base-line-height*$base-font-size; 
+  margin-bottom: 0.3*$base-line-height*$base-font-size; 
 }
 
 /* Pagination style in index/home page */
@@ -179,7 +195,20 @@ blockquote {
   font-size: 0.75*$base-font-size;
 }
 
-/* general centering element */
+/* move footnotes section further from preceding content */
+/*.footnotes {
+  margin-top: 2*$base-line-height*$base-font-size;
+}
+*/
+
+/* Header for Footnotes section */
+.footnotes::before {
+  font-size: $base-font-size;
+  font-weight: bold;
+  content: "Notes";
+}
+
+/* general-purpose centering element */
 .center {
   text-align: center;
 }
@@ -187,9 +216,10 @@ blockquote {
 /* centered image and caption style */
 .center-image{
   text-align: center;
+  vertical-align: middle;
   font-style: italic;
   font-size: $small-font-size;
-  text-color: $caption-color;
+  color: $caption-color;
   max-width: 80%;
   margin-left: auto;
   margin-right: auto;

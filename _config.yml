@@ -1,7 +1,7 @@
 ### your site title here
 
-title: Your Name
-description: subtitle | affiliations | motto
+title: Matt H.
+description: Data Analyst | PhD (Physical Chemistry)
 
 baseurl: #name of GitHub repository
 url: http://localhost:8000 #custom url to be used instead of GitHub repository
@@ -11,7 +11,7 @@ email: #
 #highlighter: pandoc # pandoc is not supported by github pages
 highlighter: rouge
 markdown: kramdown
- 
+
 #optimization -> compress.html
 compress_html:
   clippings: [html,div, p, ul, td, h1, h2, h3, h4,link, meta, footer, nav, img, header, hr, br, head, style, li, ul, ol, time, main, script, title]

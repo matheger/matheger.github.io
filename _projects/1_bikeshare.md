@@ -4,12 +4,12 @@ title: How Does a Bike-Share Navigate Speedy Success?
 description: Analysis of publicly available data from a bike sharing company
 ---
 
-{:.center-image}
-![](/projects/bikeshare_assets/bikeshare_logo.svg){: height="150px"}
-
 {:no_toc}
 * toc
 {:toc}
+
+{:.center-image}
+![](/projects/bikeshare_assets/bikeshare_logo.svg){: height="150px"}
 
 # Preamble
 
@@ -85,21 +85,25 @@ Excerpt of the station location data
 * `start_station` and `end_station` (the station names as used in the `Stations` table); and
 * `customer_type` (copy of `member_casual` from the raw data).
 
-At this point, we have a data set of 3,553,496 valid and unique ride records.
+At this point, we have a data set of 3,553,496 valid and unique ride records. Unfortunately, the data does not allow us to identify how many subscribed members the company actually has, and how many of the casual customers are returning ones.
 
 # Data Analysis
+
+## Ride Durations and Types
 
 To start out with our analysis, we sort all ride durations into 30-minute bins and investigate their frequency. The results already paint a very interesting picture: The vast majority (about 78%) of all recorded trips are less than 30 minutes long, and members make twice as many of these trips as casual customers. Conversely, trips of more than 30 minutes are taken more often by casual customers than by members. This of course begs the question: Why do subscribed members prefer shorter trips by such a big margin?
 
 {:.tableauPlaceholder}
 {% include_relative bikeshare_assets/tableau_ridesduration.html %}
 
-When investigating rider behaviour, another interesting question comes to mind: Do people generally return bikes to the same stations where they started their trips, or do they drop them off at a different one? Let's call the first type a "Roundtrip" and the second one an "A-to-B trip." By grouping all rides in the data into one of these categories, we find the following picture:
+When investigating customer behaviour, another interesting question comes to mind: Do people generally return bikes to the same stations where they started their trips, or do they drop them off at a different one? Let's call the first type a "round trip" and the second one an "one-way trip." By grouping all rides in the data into one of these categories, we find the following picture:
 
 {:.tableauPlaceholder}
 {% include_relative bikeshare_assets/tableau_triptype.html %}
 
-Clearly, roundtrips are *far* more prevalent than A-to-B trips across both customer types.
+Clearly, round trips are *far* more prevalent than one-way trips across both customer types. If someone does a round trip, however, they are more likely to be a casual customer. 
+
+## Biking to Work
 
 In the introductory notes to the project, we are given the interesting piece of information that about 30% of customers use the company's biked to cycle to work. It seems that this distribution of ride durations might be a clue! In order to dig deeper into this behaviour of our riders, let's take a look at the spatial and temporal distribution of rides both during workdays and weekends.
 
@@ -110,26 +114,63 @@ During weekends, casual and subscribed customers do not show much of a differenc
 
 From the spatial distribution of rides on the map and the size of the markers for each station, we can also tell that most of them are started around the Downtown area of Chicago. No surprise here. What is interesting, however, is the colour coding of the markers, which indicates the balance of members vs. casual customers starting their rides at each station. The stations with a higher patronage of casual customers than members (blue hues) tend to aggregate on the eastern edge of the city along the coastline, whereas the western, inland parts are dominated by subscribed members. In other words: This map tells us *where* to find the casual customers to which we want to advertise our subscription model.
 
+## Seasonal Behaviour
+
+Let's now group the number of rides by months to investigate how ridership behaviour changes across the seasons. 
+
+{:.tableauPlaceholder}
+{% include_relative bikeshare_assets/tableau_ridesbymonth.html %}
+
+Not much of a surprise here: The bikes see most of their use during the summer months, more so by members than casual customers; and the gap between the two customer segments gets more pronounced during the winter months.[^members_winter] An interesting thing to note however is the rather abrupt uptick in ride numbers in March 2021, and the drastically increased numbers in April 2021 compared to the previous year. Immediately, the increasing Covid-19 vaccination rate and the (at least perceived) end of the pandemic come to mind; it is reasonable to assume that more people were willing to be out and about, and returning to work, around this time.
+
+# Odds & Ends
+
+More for fun than productive analysis, let's have look at the duration (in minutes) and the distances of all one-way trips (calculated from the station locations) of all rides in the data set. Both quantities are described well by a log-normal distribution (red lines).
+
+{:.center-image}
+[
+![DistanceDurationPlots.svg](/projects/bikeshare_assets/DistanceDurationPlots.svg)
+](/projects/bikeshare_assets/DistanceDurationPlots.svg)[
+![DurationAnomaly.svg](/projects/bikeshare_assets/DurationAnomaly.svg)
+](/projects/bikeshare_assets/DurationAnomaly.svg)
+
+{:.caption}
+Counts of ride durations and distances (left) and 25-hour anomaly (right)
+
+There are some notable quirks in the ride duration data. One is a sudden spike in ride numbers around the 1500-minute (25-hour) mark; presumably, this is an artifact introduced by the algorithms that track the ride durations by capping some rides after a certain amount of time. The other anomaly are a number of records that extend to very long ride durations, with 269 rides being longer than 10,000 minutes (ca. one week), and 20 rides being longer than one 40,000 minutes (ca. one month.)
+
 # Key Insights
 
-...
+Based on the above analysis, we can report the following findings to the marketing team:
 
-# Odds and Ends
+**Casual customers...**
+: ... make an overall slightly smaller amount of rides than subscribed members, at a ca. 3:4 ratio.
+: ... are more likely than subscribed members to make longer trips of more than 30 minutes duration.
+: ... are more likely to start trips around the "tourist-y" downtown and coastline areas of the city.
+: ... are more likely than subscribed members to make (rather unpopular) round trips.
+<p></p>
 
-...
+**Subscribed members...**
+: ... are much more likely than casual customers to use the bikes to travel to and from work on workdays.
+: ... greatly dominate the number of short rides of less than 30 minutes.
+: ... start more rides in the inland portion of the city.
+: ... are more likely than casual customers to make one-way trips.
+<p></p>
 
-# Wrap-Up
+**Both customer types...**
+: ... strongly prefer one-way trips to round trips.
+: ... show about the same preference for ride hours during the weekends.
+: ... unsurprisingly prefer to bike in the summer months rather than winter.
+<p></p>
 
-...
+Overall, this information should help the marketing team to find the right time and locations to more effectively advertise membership upgrades to casual customers.
 
-
-# SNIPPETS
-
-One obvious limitation of the data set is the absence of any further information on the company's customer base. Specifically, we are unable to tell what proportion of rides are taken by returning customers, and how many subscribed customers the company actually has.
-
+----
 
 [^fictional_company_name]: While the company in the capstone project for the Google Data Analytics course is made out to be fictional, it has a real-life equivalent: [Divvy](https://www.divvybikes.com), from which we also take the openly available data sets for analysis.
 
 [^station_loc_jitter]: Presumably, these are GPS coordinates reported by transmitters on the bikes themselves, not a fixed value assigned to the station.
 
 [^temp_stations_retained]: This is a somewhat arbitrary decision. We could easily argue for eliminating the temporary stations as well and merging them with the "main" ones. 
+
+[^members_winter]: Perhaps some members feel that they need to get their money's worth during the fall winter months as well...?
