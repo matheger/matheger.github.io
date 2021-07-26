@@ -1,5 +1,5 @@
 ---
-title:
+title: Projects
 layout: default
 permalink: /projects/
 published: true
