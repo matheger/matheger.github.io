@@ -1,8 +1,7 @@
 ---
-title: Python Bits & Pieces
+title: Python Stuff
 layout: default
 permalink: /python/
 published: true
 ---
 
-Aaa
