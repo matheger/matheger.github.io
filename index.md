@@ -9,9 +9,11 @@ published: true
 
 # Welcome!
 
-My name is Matt. I have been working as a PhD researcher in physical chemistry (specifically spectroscopy and quantum simulations) for several years, which gives me a solid mathematical and data-centric background. I have recently decided to extend my career opportunities into the field of data analytics; this page acts as a minimal, work-in-progress showcase for my new skill set. 
+My name is Matt. I am a PhD researcher in molecular spectroscopy and quantum simulations who has recently decided to extend his career into the field of data analytics. In order to hone and showcase my analysis skills and programming capabilities, I have set up this website as a minimal, work-in-progress portfolio. 
 
-For some example projects and code snippets, please see the [Projects](/projects) page.
+For some example projects and code snippets, feel free to head over to the [Projects](/projects) page. 
+
+If you are familiar with the Python programming language, you might also appreciate this relentlessly nerdy collection of nonsense.
 
 <br>
 
