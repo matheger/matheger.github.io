@@ -4,11 +4,12 @@ title: Matt H.
 description: Data Analyst | PhD (Physical Chemistry)
 
 baseurl: #name of GitHub repository
-url: http://localhost:8000 #custom url to be used instead of GitHub repository
-#url: https://matheger.github.io 
+#url: http://localhost:8000 #custom url to be used instead of GitHub repository
+url: https://matheger.github.io 
 email: #
 
-#highlighter: pandoc # pandoc is not supported by github pages
+#highlighter: pan
+doc # pandoc is not supported by github pages
 highlighter: rouge
 markdown: kramdown
 
