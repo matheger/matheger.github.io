@@ -128,7 +128,7 @@ Not much of a surprise here: The bikes see most of their use during the summer m
 
 # Odds & Ends
 
-More for fun than productive analysis, let's have look at the duration (in minutes) and the distances of all one-way trips (calculated from the station locations) of all rides in the data set. Both quantities are described well by a log-normal distribution (red lines).
+More for fun than productive analysis, let's have look at the duration (in minutes) and the distances of all one-way trips (calculated from the station locations) of all rides in the data set. Both quantities are described well by a log-normal distribution (red lines).[^lognormal_code_ex]
 
 {:.center-image}
 [
@@ -179,3 +179,5 @@ Overall, this information should help the marketing team to find the right time 
 [^members_winter]: Perhaps some members feel that they need to get their money's worth during the fall winter months as well...?
 
 [^stations_code_ex]: See [here](/projects/90_code_snippets/#sql-station-locations) for a code sample of the underlying SQL query.
+
+[^lognormal_code_ex] See [here](/projects/90_code_snippets/#r-log-normal-fit-of-ride-durations) for a the R code used for the log-normal fits.
