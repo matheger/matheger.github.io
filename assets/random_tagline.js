@@ -2,7 +2,7 @@ var taglines = [
 	"Particularly big zeros have been known to almost equal a little bit of one.",
 	"\"Just remember that a CPU is literally a rock that we tricked into thinking.\"",
 	"<a href='https://www.youtube.com/watch?v=yneJIxOdMX4'>You look like a thing and I love you.</a>",
-	"Did you know that, statistically speaking, there are two popes per square kilometer in Vatican City?",
+	"Statistically speaking, Vatican City is home to two popes per square kilometer.",
 	]
 
 function getTagline() {
