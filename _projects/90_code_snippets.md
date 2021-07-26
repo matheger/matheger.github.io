@@ -1,8 +1,14 @@
 ---
 layout: project
 title: Code Snippets
-description:
+description: Code examples from projects
 ---
+
+On this page, you will find various sample code used in the example projects. Click the "Show code" tags to expand the sections.
+
+{:no_toc}
+* toc
+{:toc}
 
 # "How Does a Bike-Share Navigate Speedy Success?"
 
@@ -81,7 +87,7 @@ group by station_name;
 {::options parse_block_html="false" /}
 <p></p>
 
-## R: Lognormal Fit of Ride Durations
+## R: Log-Normal Fit of Ride Durations
 
 The following code was used to create a lognormal fit of the frequency of recorded ride durations in minutes. The references to `knime.in` and `knime.out` data frames are used to interface this code snippet with the KNIME workflow in which it was included.
 
