@@ -8,8 +8,7 @@ baseurl: #name of GitHub repository
 url: https://matheger.github.io 
 email: #
 
-#highlighter: pan
-doc # pandoc is not supported by github pages
+#highlighter: pandoc # pandoc is not supported by github pages
 highlighter: rouge
 markdown: kramdown
 
