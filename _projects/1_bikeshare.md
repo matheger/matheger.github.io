@@ -146,7 +146,7 @@ Based on the above analysis, we can report the following findings to the marketi
 **Casual customers...**
 : ... make an overall slightly smaller amount of rides than subscribed members, at a ca. 3:4 ratio.
 : ... are more likely than subscribed members to make longer trips of more than 30 minutes duration.
-: ... are more likely to start trips around the "tourist-y" downtown and coastline areas of the city.
+: ... are more likely to start trips around the "touristy" downtown and coastline areas of the city.
 : ... are more likely than subscribed members to make (rather unpopular) round trips.
 <p></p>
 

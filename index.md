@@ -3,13 +3,16 @@ layout: about
 permalink: /
 profile:
   align: right
-  image: profile.png
+  image: profile_aurora.jpg
 published: true
 ---
 
-[Gradfolio](https://github.com/jitinnair1/gradfolio){:target="_blank"} is a responsive, dark-mode ready Jekyll theme designed keeping academia in mind. The easiest way to install the theme is to fork it using GitHub. Check the README file for [instructions](https://github.com/jitinnair1/gradfolio#installation){:target="_blank"}.
+# Welcome!
 
-If you want to use this space to write your biography here, edit the `index.md` file. You can put a picture in, too. Rename your picture to `profile.png` and put it in the `assets/images/` folder.
+My name is Matt. I have created this page as a work-in-progress showcase for my data analysis capabilities. Please see the [Projects](/projects) page for example analysis projects and code snippets.
 
-The social-icons footer can be used to link profiles from GitHub, OrcID and ReasearchGate aprart form the usual Twitter, LinkedIn and Facebook. You can add your user ID in the `_config.yml` file to link your accounts.
+<br>
+
+{:.footnote style="color: #999;"}
+Please note that this site is not intended to be in view of the general public. For privacy reasons, I do not include personal or contact information on this site. If you are reading this, then I have probably directed you here, and you should have all my relevant contact details already.
 
