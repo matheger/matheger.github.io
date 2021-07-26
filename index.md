@@ -9,7 +9,9 @@ published: true
 
 # Welcome!
 
-My name is Matt. I have a PhD in physical chemistry (specifically spectroscopy and quantum simulations), and have recently decided to extend my career opportunities into the field of data analytics. This page acts as a minimal, work-in-progress showcase for the latter. Please see the [Projects](/projects) page for some example analysis projects and code snippets.
+My name is Matt. I have been working as a PhD researcher in physical chemistry (specifically spectroscopy and quantum simulations) for several years, which gives me a solid mathematical and data-centric background. I have recently decided to extend my career opportunities into the field of data analytics; this page acts as a minimal, work-in-progress showcase for my new skill set. 
+
+For some example projects and code snippets, please see the [Projects](/projects) page.
 
 <br>
 
