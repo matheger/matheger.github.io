@@ -57,7 +57,7 @@ Okay, on to some silly stuff.
 
 We've all asked ourselves at some point, "Who am I *really*?" It's a confusing and---perhaps---ultimately pointless question; but it can keep us up at night at the worst possible time.
 
-Luckily, we don't have to be alone in our existential dread. Through its permissive scoping and naming rules, we can teach Python to experience the same thing. Look:
+Luckily, we don't have to be alone in our existential dread. Through its permissive scoping and naming rules, we can teach Python to experience the same thing. Just take a look:
 
 ```python
 >>> class self:
