@@ -9,13 +9,13 @@ After spending years of learning and using Python for day-to-day tasks, I have c
 
 This page holds a number of interesting, lesser-known, or just plain nonsensical Python tidbits. They are meant to be either informative or silly---with no particular guarantee for either one. If you come away learning something, that's very good; if you just have a chuckle, even better.
 
-# Features
+# The Good...
+
+Let's start with some actually useful stuff. These are language features that may or may not be well-known, but are worth pointing nonetheless.
 
 ## Or `else`...!
 
-Let's start with some actually useful stuff. 
-
-Not a lot of people seem know this: `for` and `while` loops in Python can actually have an `else` block that is executed if the loop finishes without hitting a `break` statement. In other terms, we can make our loops execute some default fall-through behaviour if they never meet any premature exit condition.
+In Python, `for` and `while` loops support an `else` block that is executed if the loop finishes without hitting a `break` statement. In other terms, we can make our loops execute some default fall-through behaviour if they never meet any premature exit condition.
 
 As a matter of fact, `try/except` blocks support them too! So the full-blown version of exception handling in Python is this:
 
@@ -43,15 +43,17 @@ finally:
 
 ## Order!
 
-Another quick, but useful fact: Since version 3.6, dictionaries in Python are in insertion order.
+Another quick, but useful fact: Since version 3.6, dictionaries in Python are always in insertion order. Loop away!
 
 ## Talk to the file
 
-Since `print` became a function in Python 3 (and we wouldn't ever use 2.7 anymore, now would we?) it accepts a `file` parameter, which does exactly what it says on the can. Give it a file object, and it redirects the output to that file instead of the console. Gone are the days of `file.write(text + "\n")`!
+With the release of Python 3, `print` became a function *(and we wouldn't ever dare using 2.7 anymore in 2021, now would we?)* It accepts a `file` parameter, which does exactly what it says on the tin: Give it a file object, and it redirects the output to that file instead of the console. Gone are the days of `f.write(text)` and clumsy newline concatenation!
 
-# Identity Crisis
+# The Bad & The Ugly
 
 Okay, on to some silly stuff.
+
+## Identity Crisis
 
 We've all asked ourselves at some point, "Who am I *really*?" It's a confusing and---perhaps---ultimately pointless question; but it can keep us up at night at the worst possible time.
 
@@ -102,7 +104,7 @@ No, I am Spartacus!
 I am Spartacus!
 ```
 
-And it's even extensible to any number of objects we want!
+And the best part: It's extensible to any number of objects we want!
 
 # *tacet*
 
