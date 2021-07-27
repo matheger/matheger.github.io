@@ -49,7 +49,7 @@ Another quick, but useful fact: Since version 3.6, dictionaries in Python are al
 
 With the release of Python 3, `print` became a function. There are many useful implications to this, but a particular one is that it accepts a `file` parameter---and it does exactly what it says on the tin: Give it a file object, and it redirects the output to that file instead of the console. Gone are the days of `f.write(text)` and clumsy newline concatenation!
 
-# The Bad & The Ugly
+# The Bad...
 
 Okay, enough of the serious stuff. Here's some of the promised silly junk.
 
@@ -57,7 +57,7 @@ Okay, enough of the serious stuff. Here's some of the promised silly junk.
 
 We've all asked ourselves at some point, "Who am I *really*?" It's a confusing and---perhaps---ultimately pointless question; but it can keep us up at night at the worst possible time.
 
-Luckily, we don't have to be alone in our existential dread. Through its permissive scoping and naming rules, we can teach Python to experience the same thing. Just take a look:
+Luckily, we don't have to be alone in our existential dread. Through its permissive scoping and naming rules, we can teach Python to experience the same thing.
 
 ```python
 >>> class self:
@@ -102,7 +102,7 @@ No, I am Spartacus!
 I am Spartacus!
 ```
 
-And the best part: It's extensible to any number of objects we want!
+Obviously the best part of this code is that it's extensible to any number of objects we want! For added style points, we could grab a random class from `globals()` each time. Soon we won't even know anymore who we are ourselves.
 
 ## *tacet*
 
@@ -110,7 +110,7 @@ Ever had a bug that you couldn't track down? Code that would throw exceptions an
 
 Sure, we all have. It's the type of situation where some programmers with sufficient experience under their belt like to quip, "Just wrap your entire program in a `try/except` block, ha ha!" and think that they're very clever.
 
-And, sure, you could do that. But unfortunately, this solution is not very robust: Test only a part of your code, and the exceptions and stack traces will come back with full force. Wouldn't it be nice if we could get rid of all errors for good? Even for whatever else we do in the console after our code executes?
+And, sure, you could do that. But unfortunately, this solution is not very robust: Test only a part of your code, and the exception messages come back with full force. Run any other code in an open console, and you're not spared obscene stack traces laughing in your face. Wouldn't it be nice if we could protect us from them for good?
 
 Indeed, we can---and it's far simpler than the `try/except` strategy could ever be!
 
@@ -121,11 +121,11 @@ import sys
 sys.stderr.close()
 ```
 
-(And, yes, this actually works.)
+(Amazingly, yes, this actually works.)
 
-## And finally...
+# The Ugly
 
-... to round things off, here's the unholy union between a timeless interview classic and the abusive coding practice of "brevity to the point of obfuscation": the concatenation-based FizzBuzz one-liner!
+And finally, to round things off, here's the unholy union between a timeless interview classic and the abusive coding pastime of "brevity to the point of obfuscation": the concatenation-based FizzBuzz one-liner!
 
 ```python
 [print((i%3==0)*"Fizz"+(i%5==0)*"Buzz"+((i%3*i%5)!=0)*str(i)) for i in range(1,101)]
