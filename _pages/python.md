@@ -36,7 +36,7 @@ Speaking of `finally`: Can you guess what the value of `x` is at the end of this
 try:
 	x = True
 except:
-	pass
+	x = None
 finally:
 	x = False
 ```
