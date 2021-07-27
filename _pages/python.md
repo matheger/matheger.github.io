@@ -106,11 +106,11 @@ And the best part: It's extensible to any number of objects we want!
 
 ## *tacet*
 
-Ever had a bug that you couldn't track down? A program that would throw exceptions and you didn't know why? Code that kept crashing for seemingly no reason?
+Ever had a bug that you couldn't track down? Code that would throw exceptions and you didn't know why? A program that kept crashing for seemingly no reason?
 
-At this point, some programmers with sufficient experience under their belt would quip, "Just wrap your entire program in a `try/except` block, ha ha!" and think that they're very clever.
+Sure, we all have. At this point, some programmers with sufficient experience under their belt like to quip, "Just wrap your entire program in a `try/except` block, ha ha!" and think that they're very clever.
 
-However, here's the *actual* clever way to do it:
+Sure, you could do that. But if you were to test just part of your code, the errors come back. What you want is to silence them for good. So, here's the *actual* clever way to do it:
 
 ```python
 import sys
@@ -120,7 +120,7 @@ sys.stderr.close()
 
 ## And finally...
 
-... my personal *pièce de résistance*: The concatenation-based FizzBuzz one-liner!
+... to round things off, here's the unholy union between a timeless interview classic and the abusive coding practice of "brevity to the point of obfuscation": the concatenation-based FizzBuzz one-liner!
 
 ```python
 [print((i%3==0)*"Fizz"+(i%5==0)*"Buzz"+((i%3*i%5)!=0)*str(i)) for i in range(1,101)]
