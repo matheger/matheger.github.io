@@ -102,7 +102,7 @@ Ever had a bug that you couldn't track down? Code that would throw exceptions an
 
 Sure, we all have. It's the type of situation where some programmers with sufficient experience under their belt like to quip, "Just wrap your entire program in a `try/except` block, ha ha!" and think that they're very clever.
 
-And, sure, you could do that. But unfortunately, this solution is not very robust: Test only a part of your code, and the exception messages come back with full force. Run any other code in an open console, and you're not spared obscene stack traces laughing in your face. Wouldn't it be nice if we could protect us from them for good?
+And, sure, you could do that. But unfortunately, this solution is not very robust: Test only a part of your code, and the exception messages come back with full force. Run any other code in an open console, and you're not spared obscene stack traces laughing in your face. Wouldn't it be nice if we could protect ourselves from these things for good? Or, well, at least until we open the next console session?
 
 Indeed, we can---and it's far simpler than the `try/except` strategy could ever be!
 
