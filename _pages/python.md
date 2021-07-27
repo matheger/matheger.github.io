@@ -93,11 +93,9 @@ Recursion, as in the `self` example above, is more of a cheap "gotcha" than a re
 ...
 >>> Spartacus()
 I am Spartacus!
-<class '__main__.Spartacus2'>
 >>> Spartacus()()
 I am Spartacus!
 No, I am Spartacus!
-<class '__main__.Spartacus'>
 >>> Spartacus()()()
 I am Spartacus!
 No, I am Spartacus!
@@ -118,7 +116,6 @@ However, here's the *actual* clever way to do it:
 import sys
 sys.stderr.close()
 ```
-
 
 
 ## And finally...
