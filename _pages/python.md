@@ -110,7 +110,7 @@ And the best part: It's extensible to any number of objects we want!
 
 Ever had a bug that you couldn't track down? A program that would throw exceptions and you didn't know why? Code that kept crashing for seemingly no reason?
 
-At this point, some programmers with sufficient experience under their belt would quip, "Just wrap your entire program in a `try/except` block, ha ha!" And they think that they're very clever.
+At this point, some programmers with sufficient experience under their belt would quip, "Just wrap your entire program in a `try/except` block, ha ha!" and think that they're very clever.
 
 However, here's the *actual* clever way to do it:
 
