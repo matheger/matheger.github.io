@@ -21,19 +21,6 @@ As a matter of fact, `try/except` blocks support them too! So the full-blown ver
 
 ```python
 try:
-	# something
-except ...:
-	# catch errors
-else:
-	# if no error occurs
-finally:
-	# execute this no matter what
-```
-
-Speaking of `finally`: Can you guess what the value of `x` is at the end of this code?
-
-```python
-try:
 	x = True
 except:
 	pass
@@ -42,6 +29,9 @@ else:
 finally:
 	x = False
 ```
+
+(Can you guess what the value of `x` is at the end of this code?)
+
 
 ## Order!
 
