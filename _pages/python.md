@@ -106,7 +106,7 @@ I am Spartacus!
 
 And the best part: It's extensible to any number of objects we want!
 
-# *tacet*
+## *tacet*
 
 Ever had a bug that you couldn't track down? A program that would throw exceptions and you didn't know why? Code that kept crashing for seemingly no reason?
 
