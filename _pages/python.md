@@ -108,15 +108,18 @@ And the best part: It's extensible to any number of objects we want!
 
 Ever had a bug that you couldn't track down? Code that would throw exceptions and you didn't know why? A program that kept crashing for seemingly no reason?
 
-Sure, we all have. At this point, some programmers with sufficient experience under their belt like to quip, "Just wrap your entire program in a `try/except` block, ha ha!" and think that they're very clever.
+Sure, we all have. It's the type of situation where some programmers with sufficient experience under their belt like to quip, "Just wrap your entire program in a `try/except` block, ha ha!" and think that they're very clever.
 
-Sure, you could do that. But if you were to test just part of your code, the errors come back. What you want is to silence them for good. So, here's the *actual* clever way to do it:
+And, sure, we you could do that. But that solution is not sustainable; if we were to test just part of our code, the errors would come back with full force. What you want is to get rid of these errors for good, and if possible all others that might occur later on as well.
+
+So, with that goal in mind, here's the *actual* clever way to do it:
 
 ```python
 import sys
 sys.stderr.close()
 ```
 
+(And in case you're wondering---yes, this actually works.)
 
 ## And finally...
 
