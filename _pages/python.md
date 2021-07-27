@@ -110,16 +110,18 @@ Ever had a bug that you couldn't track down? Code that would throw exceptions an
 
 Sure, we all have. It's the type of situation where some programmers with sufficient experience under their belt like to quip, "Just wrap your entire program in a `try/except` block, ha ha!" and think that they're very clever.
 
-And, sure, we you could do that. But that solution is not sustainable; if we were to test just part of our code, the errors would come back with full force. What you want is to get rid of these errors for good, and if possible all others that might occur later on as well.
+And, sure, you could do that. But unfortunately, this solution is not very robust: Test only a part of your code, and the exceptions and stack traces will come back with full force. Wouldn't it be nice if we could get rid of all errors for good? Even for whatever else we do in the console after our code executes?
 
-So, with that goal in mind, here's the *actual* clever way to do it:
+Indeed, we can---and it's far simpler than the `try/except` strategy could ever be!
+
+Observe:
 
 ```python
 import sys
 sys.stderr.close()
 ```
 
-(And in case you're wondering---yes, this actually works.)
+(And, yes, this actually works.)
 
 ## And finally...
 
