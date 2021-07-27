@@ -47,7 +47,7 @@ Another quick, but useful fact: Since version 3.6, dictionaries in Python are al
 
 ## Talk to the file
 
-With the release of Python 3, `print` became a function. There are many useful implications to this, but a particular one is that it accepts a `file` parameter.... which does exactly what it says on the tin: Give it a file object, and it redirects the output to that file instead of the console. Gone are the days of `f.write(text)` and clumsy newline concatenation!
+With the release of Python 3, `print` became a function. There are many useful implications to this, but a particular one is that it accepts a `file` parameter---and it does exactly what it says on the tin: Give it a file object, and it redirects the output to that file instead of the console. Gone are the days of `f.write(text)` and clumsy newline concatenation!
 
 # The Bad & The Ugly
 
