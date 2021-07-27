@@ -119,7 +119,6 @@ import sys
 sys.stderr.close()
 ```
 
-No more errors!
 
 
 ## And finally...
