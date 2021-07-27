@@ -51,7 +51,7 @@ With the release of Python 3, `print` became a function. There are many useful i
 
 # The Bad & The Ugly
 
-Okay, on to some silly stuff.
+Okay, enough of the serious stuff. Here's some of the promised silly junk.
 
 ## Identity Crisis
 
