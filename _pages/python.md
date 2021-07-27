@@ -119,5 +119,13 @@ import sys
 sys.stderr.close()
 ```
 
-... no more errors!
+No more errors!
 
+
+## And finally...
+
+... my personal *pièce de résistance*: The concatenation-based FizzBuzz one-liner!
+
+```python
+[print((i%3==0)*"Fizz"+(i%5==0)*"Buzz"+((i%3*i%5)!=0)*str(i)) for i in range(1,101)]
+```
