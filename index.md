@@ -9,14 +9,14 @@ published: true
 
 # Welcome!
 
-My name is Matt. I am a PhD researcher in molecular spectroscopy and quantum simulations who has recently decided to extend his career into the field of data analytics. In order to hone and showcase my analysis skills and programming capabilities, I have set up this website as a minimal, work-in-progress portfolio. 
+My name is Matt. I am a PhD researcher in molecular spectroscopy and quantum simulations who has recently decided to extend his career into the field of data analytics. This website works as a minimal, work-in-progress portfolio in order to hone and showcase my analysis skills and programming capabilities. 
 
 For some example projects and code snippets, feel free to head over to the [Projects](/projects) page. 
 
-If you are familiar with the Python programming language, you might also appreciate this relentlessly nerdy collection of nonsense.
+If you are familiar with the Python programming language, you might also appreciate [this](/python) little collection of relentlessly nerdy things.
 
 <br>
 
 {:.footnote style="color: #999;"}
-Please note that this site is not intended to be in view of the general public. For privacy reasons, I do not include personal details or contact information on this site. If you are reading this, then I have probably directed you here, and you should have all my relevant contact details already. In that case, please feel free to reach out with questions or comments!
+Please note that I do not include personal details or contact information on this site for privacy reasons. If you are reading this, chances are you have all my contact details already. In that case, please feel free to reach out with questions or comments!
 
