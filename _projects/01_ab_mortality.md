@@ -2,6 +2,7 @@
 layout: project
 title: Mortality Rates in Alberta
 description: Analysis of mortality data for Alberta before and during the Covid-19 pandemic
+use_math: true
 ---
 
 {:no_toc}
@@ -35,7 +36,8 @@ First, the data is downloaded separately for each one of the finer age groups (0
 * `Population`: monthly "Person-Years" figures, calculated as the total population (based on quarterly-updated estimates) divided by 12;
 * `Standard Error`: error estimate based on assuming a Poisson distribution.
 
-Within these raw data, the total number of deaths ($$D$$) is related to the "person-years" population ($$P$$) and the calculated mortality rate ($$m$$) as $$m = D / P$$.
+Within these raw data, the total number of deaths ($$D$$) is related to the "person-years" population ($$P$$) and the calculated mortality rate ($$m$$) as $$ m = D / P $$.
+
 
 
 
