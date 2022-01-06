@@ -1,6 +1,6 @@
 ---
 layout: project
-title: Living and Dying in Alberta
+title: Mortality Rates in Alberta
 description: Analysis of mortality data for Alberta before and during the Covid-19 pandemic
 ---
 
