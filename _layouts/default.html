@@ -22,6 +22,15 @@
 		<!-- Load fontawesome here for faster loadtimes: https://stackoverflow.com/a/35880730/9523246 -->
         <script type="text/javascript"> (function() { var css = document.createElement('link'); css.href = 'https://use.fontawesome.com/releases/v5.11.0/css/all.css'; css.rel = 'stylesheet'; css.type = 'text/css'; document.getElementsByTagName('head')[0].appendChild(css); })(); </script>
 
+        <!-- page counter as per https://countapi.xyz -->
+
+        <script>
+        function cb(response) {
+        document.getElementById('visits').innerText = response.value;
+        }
+        </script>
+        <!--script async src="https://api.countapi.xyz/hit/matheger.github.io.0/all?callback=cb"></script-->
+
         <hr>
 
     </head>
@@ -38,7 +47,7 @@
             <small> &copy; {{site.title}} {{ site.time | date: '%Y' }}
                     | Powered by Jekyll and
                     <a target="_blank" href="https://github.com/jitinnair1/gradfolio/">Gradfolio</a>.
-                    Last updated on {{ site.time | date_to_long_string }}
+                    Last updated on {{ site.time | date_to_long_string }} | <span id="visits">-1</span>
             </small>
           </p>
 
@@ -47,3 +56,4 @@
     </body>
 
 </html>
+
