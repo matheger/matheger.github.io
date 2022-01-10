@@ -22,14 +22,15 @@
 		<!-- Load fontawesome here for faster loadtimes: https://stackoverflow.com/a/35880730/9523246 -->
         <script type="text/javascript"> (function() { var css = document.createElement('link'); css.href = 'https://use.fontawesome.com/releases/v5.11.0/css/all.css'; css.rel = 'stylesheet'; css.type = 'text/css'; document.getElementsByTagName('head')[0].appendChild(css); })(); </script>
 
-        <!-- page counter as per https://countapi.xyz -->
+        <!-- page counter, from https://countapi.xyz -->
 
         <script>
         function cb(response) {
         document.getElementById('visits').innerText = response.value;
         }
         </script>
-        <!--script async src="https://api.countapi.xyz/hit/matheger.github.io.0/all?callback=cb"></script-->
+
+        <script async src="https://api.countapi.xyz/hit/matheger.github.io.0/all?callback=cb"></script>
 
         <hr>
 
