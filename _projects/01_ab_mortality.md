@@ -48,6 +48,13 @@ Our goal is to produce a graph that shows the averaged mortality rates for the p
 
 To bring the data into the required form, we run it through a series of Pivot Tables. First, the death counts and population estimates are aggregated by summing over the sex and age categories, and subsequently used to calculate the mortality rate. This mortality data can then be pivoted out into the given years and months, and the data for 2010 through 2019 can be averaged and its standard deviation calculated.
 
+{:.center-image}
+![](/projects/ab_mortality_assets/pivots)
+
+{:.caption}
+Intermediary pivot tables created from the raw data. These tables are then further aggregated to yield the overall monthly data.
+
+
 ## Visualization and Interpretation
 
 To visualize the data, we can use [Plotly](https://plotly.com) in Python.
