@@ -259,3 +259,20 @@ summary {
   /* undo line spacing to move caption closer to preceding element */
   margin-top: -0.8*$base-line-height*$base-font-size; 
 }
+
+
+/* table styling */
+table{
+    border-collapse: collapse;
+    border:1px solid #bbbbbb;
+}
+
+th{
+    padding: 3px;
+    border:1px solid #bbbbbb;
+}
+
+td{
+    padding: 3px;
+    border:1px solid #bbbbbb;
+}
