@@ -49,24 +49,41 @@ Our goal is to produce a graph that shows the averaged mortality rates for the p
 To bring the data into the required form, we run it through a series of Pivot Tables. First, the death counts and population estimates are aggregated by summing over the sex and age categories, and subsequently used to calculate the mortality rate. This mortality data can then be pivoted out into the given years and months, and the data for 2010 through 2019 can be averaged and its standard deviation calculated.
 
 {:.center-image}
-![](/projects/ab_mortality_assets/pivots)
+![](/projects/ab_mortality_assets/pivots.png)
 
 {:.caption}
-Intermediary pivot tables created from the raw data. These tables are then further aggregated to yield the overall monthly data.
+Intermediary pivot tables (with slicers) created from the raw data. These tables are then further aggregated to yield the overall monthly data.
 
 
 ## Visualization and Interpretation
 
-To visualize the data, we can use [Plotly](https://plotly.com) in Python.
+Let's visualize the data with [Plotly](https://plotly.com) in Python.[^python_code] In the figure below, the grey line shows the average mortality in Alberta from 2010 to 2019, with the shaded area being ±3 standard deviations. The orange and red curves are the data for 2020 and 2021.
 
-{:.center-image style="font-style:normal"}
-{% include_relative ab_mortality_assets/mortality_avg_2020_2021.html %}
+{:.center-image}
+{% include_relative ab_mortality_assets/mortality_avg_2020_2021.html %}{: style="font-style:normal"}
 
 {:.caption style="margin-top:4pt"}
 Comparison of average mortality rates between pre-pandemic years (2010–2019), 2020, and 2021.
 
+The purpose of choosing 3 standard deviations for the width of the grey band is to indicate the entire range of mortality observations from those previous years.[^stddevs] With this pre-pandemic data in hand, there are some crucial observations that we can make:
 
+  * For the first two months of 2020, the mortality data still aligns with that of the previous decade. Starting with March 2020, however, the mortality increases beyond any previously observed rate. We can use this as a rough measure for the "start date" of the pandemic.
 
+  * Most importantly, only two months during the pandemic (May 2020 and February 2021) show mortality rates that are compatible with the previous decade. All other data exceeds the historic baseline, some of it by a quite drastic margin.
+
+  * The strongest deviations in the data occur in the months of September and October 2021 --- the time frame of the spread of the Delta variant of the virus.
+
+## Comparison with Reported Cases and Deaths
+
+Another interesting comparison to make is that between the mortality data and the specific Covid case numbers and deaths reported by Alberta Health in their ["Summary Data"](https://www.alberta.ca/stats/covid-19-alberta-statistics.htm#data-export).[^covid_data_ref]
+
+{:.center-image}
+{% include_relative ab_mortality_assets/cases_mortality_comp.html %}{: style="font-style:normal"}
+
+{:.caption style="margin-top:4pt"}
+Comparison of average mortality rates for 2020 and 2021 with reported Covid case numbers and deaths
+
+*(to be continued...)*
 
 
 
@@ -74,6 +91,12 @@ Comparison of average mortality rates between pre-pandemic years (2010–2019), 
 
 [^ihda_data_download]: From the front page: "Go to the IHDA Data" → "Enter IHDA Data" → "Mortality" → "Mortality Rates - Monthly"
 
-[^month-lookup]: CODE EXCERPT
+[^month-lookup]: (tbd)
 
 [^summation_note]: Note that $$D$$ and $$P$$ have to be summed individually, not as their fractions, since $$m_\mathrm{tot} \ne \sum{m_\mathrm{a,s}}$$.
+
+[^python_code]: (tbd)
+
+[^stddevs]: Assuming a normal distribution of the underlying data, 3 standard deviations cover 99.7% of the distribution.
+
+[^covid_data_ref]: Data shown here as of 10-Jan-2022
