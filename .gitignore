@@ -9,3 +9,5 @@ _python http server.bat
 matheger.sublime-project
 matheger.sublime-workspace
 _layouts/default.html
+_config.yml
+_layouts/default.html

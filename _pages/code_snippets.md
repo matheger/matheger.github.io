@@ -1,7 +1,8 @@
 ---
-layout: project
-title: Code Snippets
-description: Code examples from projects
+title: Projects
+layout: default
+permalink: /code_snippets/
+published: true
 ---
 
 On this page, you will find various sample code used in the example projects. Click the "Show code" tags to expand the sections.
@@ -9,6 +10,59 @@ On this page, you will find various sample code used in the example projects. Cl
 {:no_toc}
 * toc
 {:toc}
+
+----
+
+# Fake News and Dirty Data
+
+Some exemplary code snippets from the ["fake news"](/project/fakenews) project:
+
+## Python: Data Cleaning
+
+To clean the initial of malformed rows, and the article bodies of some "leaky" contents, the following function is applied to every data row (using the `re` standard library package for regular expressions):
+
+{::options parse_block_html="true" /}
+
+<details><summary markdown="span">Show Python code</summary>
+
+```python
+def clean_string(string):
+    """
+    Clean string by removing leaky features, newlines and tabs
+    """
+    
+    # replace tabs and newlines with whitespaces (we'll use tabs as column
+    # separators for storage later)
+    string = re.sub(r"[\t\n\r]", r" ", string) 
+    
+    # remove "(Reuters)" preambles ("true" articles)
+    string = re.sub(
+        r".{0,100}" # up to 100 characters
+        r"\(Reuters\)" # match "(Reuters)"
+        r"[ -]*", # separator dash surrounded by spaces
+        r"", string, flags=re.IGNORECASE) 
+    
+    # remove "featured image" and "photo by" endings ("fake" articles)
+    # search for "featured", "image" or "photo" followed by ":", "by" or "via"
+    # within the last 50 characters of a string and remove
+    string = re.sub(
+        r"(photo|featured|image)" # match 'photo', 'featured' or 'image'
+        r".{0,20}?" # allow for up to 20 non-EOL characters, as few as possible
+        r"(:|by|via)" # match ':', 'by' or 'via'
+        r".{0,50}$", # allow for up to 50 characters to end of string
+        r"", string, flags=re.IGNORECASE)
+    
+    # remove "21st Century Wire" preambles ("fake" articles)
+    string = re.sub(r"21st Century Wire( says| asks)?", r"", string,
+                    flags=re.IGNORECASE)
+
+    return string.strip()
+```
+
+</details>
+{::options parse_block_html="false" /}
+<p></p>
+
 
 ----
 
@@ -41,13 +95,17 @@ A more elaborate approach would be to create a separate lookup table and use the
 where `<lookup table range>` is the cell range of the lookup table, starting with the "Number" column and the first data row ("1, January, Jan"); and `<month number>` is a reference to a cell holding the number of the requested month. The third function parameter `3` indicates that we want to return the value from the third column in the lookup table --- i.e., the abbreviated month name; we could adjust this to also return the full name by setting it to `2`.
 
 
-# Python/Plotly Visualizations
+## Python/Plotly Visualizations
 
 Once the necessary Pivot Tables have been created, we can use `pandas` to load and transform the data, and then visualize it using `plotly`.
 
-## `data_loader.py`
+### `data_loader.py`
 
 For convenience and re-usability, the step of loading the data from the Excel files is outsourced to a separate Python script. 
+
+{::options parse_block_html="true" /}
+
+<details><summary markdown="span">Show Python code</summary>
 
 ```python
 import pandas as pd
@@ -64,9 +122,19 @@ with pd.ExcelFile(DATA_PATH + "2022-01-06-V01 Mortality Data.xlsx") \
     months = avg_mort.index.tolist()
 ```
 
-## `plot_mortality.py`
+</details>
+{::options parse_block_html="false" /}
+<p></p>
+
+
+
+### `plot_mortality.py`
 
 The code below will create a graph with the averaged 2010–2019 data and the grey shaded "error band".
+
+{::options parse_block_html="true" /}
+
+<details><summary markdown="span">Show Python code</summary>
 
 ```python
 import plotly.graph_objects as go
@@ -112,6 +180,10 @@ fig.layout.xaxis.title = "Month"
 # plot
 fig.show()
 ```
+
+</details>
+{::options parse_block_html="false" /}
+<p></p>
 
 ----
 
@@ -221,6 +293,8 @@ knime.out = data.frame(x_unique, curve)
 knime.flow.out = list(meanlog = meanlog, sdlog = sdlog)
 ```
 
-<details>
+</details>
 {::options parse_block_html="false" /}
-<p></p>
+
+{:.hidden .center} 
+(Yes, I write lowercase SQL code and use = for assignments in R. Fight me!)
