@@ -61,4 +61,4 @@ Despite the claims in the pdf notes that the data was cleaned, a cursory look th
 
 [^correct]: The best kind of correct!
 
-[^code_snippets]: See [here](/projects/code_snippets/) for some example python code snippets.
+[^code_snippets]: See [here](/code_snippets/) for some example python code snippets.

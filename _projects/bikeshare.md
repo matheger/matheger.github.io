@@ -178,6 +178,6 @@ Overall, this information should help the marketing team to find the right time 
 
 [^members_winter]: Perhaps some members feel that they need to get their money's worth during the fall winter months as well...?
 
-[^stations_code_ex]: See [here](/projects/code_snippets/#sql-station-locations) for a code sample of the underlying SQL query.
+[^stations_code_ex]: See [here](/code_snippets/#sql-station-locations) for a code sample of the underlying SQL query.
 
-[^lognormal_code_ex]: See [here](/projects/code_snippets/#r-log-normal-fit-of-ride-durations) for a the R code used for the log-normal fits.
+[^lognormal_code_ex]: See [here](/code_snippets/#r-log-normal-fit-of-ride-durations) for a the R code used for the log-normal fits.

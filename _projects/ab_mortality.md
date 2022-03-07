@@ -102,11 +102,11 @@ At the time of writing, the Omicron variant is leading to unprecedented infectio
 
 [^ihda_data_download]: From the front page: "Go to the IHDA Data" → "Enter IHDA Data" → "Mortality" → "Mortality Rates - Monthly"
 
-[^month-lookup]: See [here](/projects/code_snippets/#excel-month-name-lookup) for implementation details.
+[^month-lookup]: See [here](/code_snippets/#excel-month-name-lookup) for implementation details.
 
 [^summation_note]: Note that $$D$$ and $$P$$ have to be summed individually, not as their fractions, since $$m_\mathrm{tot} \ne \sum{m_\mathrm{a,s}}$$.
 
-[^python_code]: See [here](/projects/code_snippets/#pythonplotly-visualizations) for some example python code snippets.
+[^python_code]: See [here](/code_snippets/#pythonplotly-visualizations) for some example python code snippets.
 
 [^stddevs]: Assuming a normal distribution of the underlying data, 3 standard deviations cover 99.7% of the distribution.
 
