@@ -116,6 +116,12 @@ summary {
   font-weight: bold;
 }
 
+
+.hidden {
+  color: $background-color;
+}
+
+
 .headline, .post-headline {
   font-size: 2em;
   margin-bottom: -0.4em;
