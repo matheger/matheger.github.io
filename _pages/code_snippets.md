@@ -15,9 +15,9 @@ On this page, you will find various sample code used in the example projects. Cl
 
 # Fake News and Dirty Data
 
-Some exemplary code snippets from the ["fake news"](/project/fakenews) project:
+Some exemplary code snippets from the "[fake news](/projects/fakenews)" project:
 
-## Python: Data Cleaning
+## Python: Text Cleaning
 
 To clean the raw data of some "leaky" contents, the following function is applied to every article (using the `re` standard library package for regular expressions):
 
@@ -68,10 +68,11 @@ def clean_text(string):
                     r"(\&gt;)", # match "&gt;" at end
                     " ", string)
     
-    # add spacing between dates and text ("fake" articles)
-    string = re.sub(r"(?P<year>20\d\d)" # match year (named group)
-                    r"(?P<text>\w+)", # match any following text (named group)
-                    r"\g<year> \g<text>", # reuse groups, separate by space
+    # add missing spaces after punctuation
+    string = re.sub(r"(?P<word1>[\w\d]+)" # match first word
+                    r"(?P<punct>[\.,:;!?])" # match punctuation
+                    r"(?P<word2>[\w\d]+)", # match second word
+                    r"\g<word1>\g<punct> \g<word2>",
                     string)
 
     return string.strip()
@@ -81,12 +82,52 @@ def clean_text(string):
 {::options parse_block_html="false" /}
 <p></p>
 
+## Python: Lemmatization
+
+Processing of the article bodies (word splitting, tagging and lemmatization) is done using the following function:
+
+{::options parse_block_html="true" /}
+
+<details><summary markdown="span">Show Python code</summary>
+
+```python
+def lemmatize(string):
+    """
+    Clean up and lemmatize string
+    """
+        
+    # remove all non-word characters 
+    string_clean = re.sub(r"[\d\W_]+", r" ", string.lower()) 
+    
+    # remove twitter handles and hashtags
+    string_clean = re.sub(r"(@|#)[\w\d_]+", r" ", string_clean)
+    
+    # split string and remove stop words
+    string_split = [word for word in string_clean.split()
+                    if word not in STOPWORDS]
+    
+    # tag remaining words
+    string_tagged = nltk.pos_tag(string_split)
+    
+    # lemmatize words using a wrapper function (leaves words alone that 
+    # are not nouns, verbs or adjectives)
+    string_lem = [_lemmatize(word, tag) for (word, tag) in string_tagged]
+    
+    # reassemble string
+    lemmatized = " ".join(string_lem)
+    
+    return lemmatized
+```
+
+</details>
+{::options parse_block_html="false" /}
+<p></p>
 
 ----
 
 # Mortality Rates in Alberta
 
-Some exemplary code snippets from the ["mortality rates"](/projects/ab_mortality) project:
+Some exemplary code snippets from the "[mortality rates](/projects/ab_mortality)" project:
 
 ## Excel: Month Name Lookup
 
@@ -207,7 +248,7 @@ fig.show()
 
 # "How Does a Bike-Share Navigate Speedy Success?"
 
-Some exemplary code snippets from the ["bike-share"](/projects/bikeshare/) project:
+Some exemplary code snippets from the "[bike-share](/projects/bikeshare/)" project:
 
 ## SQL: Station Locations
 
