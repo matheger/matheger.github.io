@@ -51,9 +51,9 @@ Overall, the subject field doesn't really give us anything useful to work with, 
 
 Despite the claims in the PDF notes that the data was cleaned, there are also a number of "junk" entries that we need to deal with: Rows that only contain URLs, duplicate entries, missing text bodies, etc. A cursory look at the data also reveals another problem. All of the articles in the "true" data subset start with a preamble like "WASHINGTON (Reuters)". Including these text fragments later on would cause feature leakage, and our model would simply learn to pick out this preamble to judge whether an article is fake news. Similarly, a lot of the entries in the "fake" data include image source attributions that look like "Featured image via..." which causes the same problem. Thus, we need to strip these parts from the valid entries as well.
 
-All data cleaning is done in Python, using the `pandas` and `re` regex packages.[^code_snippets] 
+All data cleaning is done in Python, using the `pandas` and `re` regex packages.[^cleaning_code] 
 
-To remove the "leaky" bits of data mentioned before, we would ideally have some way to detect the according parts in the articles automatically. Otherwise, we will have to manually craft a detection and removal strategy for each piece of harmful "meta"-information separately. For simplicity, we will choose the latter approach here and run each article through a series of regular expression (regex) matches in order to remove the problematic text fragments. At the same time, we can remove any non-printable characters like tabs and newlines from the text bodies that could otherwise mess with us at some point, together with some other unwanted fragments such as link URLs, embedded JavaScript code, etc.
+To remove the "leaky" bits of data mentioned before, we would ideally have some way to detect the according parts in the articles automatically. Otherwise, we will have to manually craft a detection and removal strategy for each piece of harmful "meta"-information separately. For simplicity, we will choose the latter approach here and run each article through a series of regular expression (regex) matches in order to remove the problematic text fragments. At the same time, we can take some other steps to improve the quality of the text data: Removing any non-printable characters like tabs and newlines; eliminating non-text artifacts such as URLs, embedded JavaScript code, etc.; and correcting parsing errors where words and punctuation are not properly separated by whitespaces.
 
 First, all rows with duplicated article titles and bodies are filtered out; this eliminates 5573 entries (!) from the "fake" and 220 entries from the "true" data.[^cleaned] Then, rows with invalid entries (empty title or text fields, containing URLs, ...) are removed; this eliminates a further 508 "fake" and only a single "true" article. Finally, we find that there are 95 entries in the "true" data that are simply uncommented tweets from Trump's official twitter account, and since they contain no other reporting, we remove these as well.
 
@@ -69,9 +69,29 @@ Obviously, we want to build some sort of classifier that tells us whether a give
 
 Consequently, metadata alone won't suffice to categorize articles as "fake" or "true". We will have to dive into the actual text to find our clues.
 
-## Stemming and Lemmatization
+## Lemmatization and Stop Words
 
 One basic idea for the textual analysis is to work with the occurrence of certain signal words in the articles and classify whether a combination of them is indicative of a "true" or "fake" article. For robustness, it also makes sense to treat any closely related words as one; for example, "say", "says" and "said" all share the same root, and we replace each one of these words with their common root "say". This process is called "lemmatization".
+
+At the same time, we will encounter a lot of "stop words" that appear very often in every text, but do not add any factual information: words such as "a", "the", "and", etc. In general, they can be removed without much impact on the overall informational content and thus resulting model performance.
+
+For our analysis, we will use the `nltk` (**n**atural **l**anguage **t**ool**k**it) Python package for lemmatization and stop word removal. First, each article body is cleaned of all non-word characters such as numbers and special symbols, and then split on whitespaces into single lowercase words. All stop words are removed from the resulting word list, and each separate word is tagged with its lexical function (nouns, verbs, adjectives, ...) using the `nltk.pos_tag` function. Based on these tags, the `nltk.WordNetLemmatizer` class is used to lemmatize all nouns, verbs, and adjectives in this list, while all other words are retained. Finally, the list of lemmatized words is reassembled into a single string and stored.[^processing_code]
+
+Through these processing steps, a post-cleanup article text such as this...
+
+> In spite of Senator John McCain s promise to his constituents only 9 months ago when he was running for reelection, that he would fight to repeal and replace Obamacare, McCain voted late last night with two other liberal Republican senators, and every Democrat senator to keep Obamacare intact. But that s not what Senator McCain promised Arizona voters he would do only 9 months ago On October 10, 2016, John McCain faced off against his Democrat opponent Congresswoman Kirkpatrick in a televised debate. At the center of the debate was the disastrous Obamacare and what could be done to fix it. (...)
+
+... is transformed into this much denser form:
+
+> spite senator john mccain promise constituent month ago run reelection would fight repeal replace obamacare mccain vote late last night two liberal republican senator every democrat senator keep obamacare intact senator mccain promise arizona voter would month ago october john mccain face democrat opponent congresswoman kirkpatrick televise debate center debate disastrous obamacare could do fix (...)
+
+## Feature Selection
+
+With the articles in their "condensed" form, we can start selecting words to use in the model training process. Our basic assumption will be that "true" and "fake" articles differ substantially in their writing style, and that the probability of some article fitting into either category can be estimated based on the presence (or, perhaps, absence) of certain keywords. In order to find these words, we first need to create a count of *all* words in *all* articles for each category, and then calculate the relative frequency with which they occur. Based on the resulting occurrence frequencies, we define a threshold value of 0.0001 and include only words with frequencies at or above this threshold so as to limit our feature set to a manageable size.
+
+Based on our assumption of word choices, we also know that words which are equally likely to appear in both "true" and "fake" articles will not serve any discriminating purpose in our model. Thus, we can further reduce our feature set by excluding all words in which the ratio of occurrence frequencies between the two subsets is within a certain margin, and we choose all words which are at least twice as likely to appear in one category than the other.[^relfreq_params] 
+
+Lastly, we can also exclude a manual selection of words that might be of little use to the model, or introduce bias; for example, the "fake" articles routinely include the word "via" to source external material, whereas it appears far less often in the "true" articles. We end up with 1100 words to include in our modeling.
 
 **To be continued...**
 
@@ -81,6 +101,12 @@ One basic idea for the textual analysis is to work with the occurrence of certai
 
 [^correct]: The best kind of correct!
 
-[^code_snippets]: See [here](/code_snippets/) for some example code snippets.
+[^cleaning_code]: See [here](/code_snippets/#python-text-cleaning) for implementation details.
 
 [^cleaned]: So much for "The data collected were cleaned and processed"...!
+
+[^stopwords]: Or any language, for that matter.
+
+[^processing_code]: See [here](/code_snippets/#python-lemmatization) for implementation details.
+
+[^relfreq_params]: The occurrence frequency threshold and margin values can be regarded as hyperparameters of our models and should be subject to tuning.
