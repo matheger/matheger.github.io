@@ -19,22 +19,21 @@ Some exemplary code snippets from the ["fake news"](/project/fakenews) project:
 
 ## Python: Data Cleaning
 
-To clean the initial of malformed rows, and the article bodies of some "leaky" contents, the following function is applied to every data row (using the `re` standard library package for regular expressions):
+To clean the raw data of some "leaky" contents, the following function is applied to every article (using the `re` standard library package for regular expressions):
 
 {::options parse_block_html="true" /}
 
 <details><summary markdown="span">Show Python code</summary>
 
 ```python
-def clean_string(string):
+def clean_text(string):
     """
-    Clean string by removing leaky features, newlines and tabs
+    Clean text by removing leaky features, newlines, and tabs.
     """
     
     # replace tabs and newlines with whitespaces (we'll use tabs as column
     # separators for storage later)
-    string = re.sub(r"[\t\n\r]", r" ", string) 
-    
+    string = re.sub(r"\s", r" ", string) 
     # remove "(Reuters)" preambles ("true" articles)
     string = re.sub(
         r".{0,100}" # up to 100 characters
@@ -42,19 +41,38 @@ def clean_string(string):
         r"[ -]*", # separator dash surrounded by spaces
         r"", string, flags=re.IGNORECASE) 
     
-    # remove "featured image" and "photo by" endings ("fake" articles)
-    # search for "featured", "image" or "photo" followed by ":", "by" or "via"
-    # within the last 50 characters of a string and remove
+    # remove image/video attributions at end of "fake" articles
     string = re.sub(
-        r"(photo|featured|image)" # match 'photo', 'featured' or 'image'
-        r".{0,20}?" # allow for up to 20 non-EOL characters, as few as possible
-        r"(:|by|via)" # match ':', 'by' or 'via'
-        r".{0,50}$", # allow for up to 50 characters to end of string
-        r"", string, flags=re.IGNORECASE)
-    
+        r"(Featured|Image|Photo|Video)" # match one of these words
+        r".{0,200}$", # allow for 200 arbitrary characters to end of string
+        r" ", string)
+
     # remove "21st Century Wire" preambles ("fake" articles)
     string = re.sub(r"21st Century Wire( says| asks)?", r"", string,
                     flags=re.IGNORECASE)
+
+    # remove pic.twitter.com urls
+    string = re.sub(r"pic\.twitter\.com" # domain
+                    r"/[\S]+", # 1 or more non-whitespace characters
+                    r" ",
+                    string)
+
+    # remove any other urls
+    string = re.sub(r"(http(s)?://)" # match http:// or https://
+                    r"\S+", # collect all following whitespace characters
+                    r" ", string)
+
+    # remove embed codes
+    string = re.sub(r"(// < !\[CDATA)" # match "// < ![CDATA"
+                    r".*" # any number of characters
+                    r"(\&gt;)", # match "&gt;" at end
+                    " ", string)
+    
+    # add spacing between dates and text ("fake" articles)
+    string = re.sub(r"(?P<year>20\d\d)" # match year (named group)
+                    r"(?P<text>\w+)", # match any following text (named group)
+                    r"\g<year> \g<text>", # reuse groups, separate by space
+                    string)
 
     return string.strip()
 ```
