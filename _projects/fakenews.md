@@ -42,14 +42,14 @@ A good data analysis will start with the source and quality of the data itself, 
 2. The "fake" news articles are sourced from a more diverse background, but unfortunately we get no detailed information about those sources. A high-quality dataset would include the original article URLs as well.
 3. The source for the "true" news articles is misspelt in the explanatory PDF notes. "reuter.com" leads to the website of a German retailer for bathroom products. The website of the Reuters news agency is "reuter**s**.com". This is not a huge problem in itself, but still gives off an unpleasant impression of sloppy work.
 4. For some reason, the notes also point out that each category contains "more than 12,600 articles" of "fake" and "true" news each. That's technically correct,[^correct] but also an example of being "oddly specific". (Perhaps these notes were typed out for an earlier version of the dataset and not updated later on when more articles were added?)
-5. The notes state that the data was cleaned, but does not explain *how*.
+5. The notes state that the data was cleaned, but do not explain *how*.
 6. As for the `subject` field, all Reuters articles are labeled either "politicsNews" or "worldnews". The labels on the "fake" articles are somewhat more granular, but only mildly more helpful: "Government News", "US_News", "left-news", "News" and "politics". We get no information how these labels were assigned, and more crucially, why there are no common labels between the "true" and "fake" data sets.
 
-Overall, the subject field doesn't really give us anything useful to work with, so we'll just ignore it from now on. Likewise, we'll leave the publication dates aside and focus on the article titles and bodies for our analysis.
+Overall, the `subject` field doesn't really give us anything useful to work with, so we'll just ignore it from now on. Likewise, we'll leave the publication dates aside and focus on the article titles and bodies for our analysis.
 
 ## Data Cleaning
 
-Despite the claims in the PDF notes that the data was cleaned, there are also a number of "junk" entries that we need to deal with: Rows that only contain URLs, duplicate entries, missing text bodies, etc. A cursory look at the data also reveals another problem. All of the articles in the "true" data subset start with a preamble like "WASHINGTON (Reuters)". Including these text fragments later on would cause feature leakage, and our model would simply learn to pick out this preamble to judge whether an article is fake news. Similarly, a lot of the entries in the "fake" data include image source attributions that look like "Featured image via..." which causes the same problem. Thus, we need to strip these parts from the valid entries as well.
+Despite the claims in the PDF notes that the data was cleaned, there are also a number of "junk" entries that we need to deal with: Rows that only contain URLs, duplicate entries, missing text bodies, etc. A cursory look at the data also reveals another problem. All of the articles in the "true" data subset start with a preamble like "WASHINGTON (Reuters)". Including these text fragments later on would cause feature leakage, and our model would simply learn to pick out this preamble to judge whether an article is fake news.[^ruler_detection] Similarly, a lot of the entries in the "fake" data include image source attributions that look like "Featured image via..." which causes the same problem. Thus, we need to strip these parts from the valid entries as well.
 
 All data cleaning is done in Python, using the `pandas` and `re` regex packages.[^cleaning_code] 
 
@@ -91,7 +91,31 @@ With the articles in their "condensed" form, we can start selecting words to use
 
 Based on our assumption of word choices, we also know that words which are equally likely to appear in both "true" and "fake" articles will not serve any discriminating purpose in our model. Thus, we can further reduce our feature set by excluding all words in which the ratio of occurrence frequencies between the two subsets is within a certain margin, and we choose all words which are at least twice as likely to appear in one category than the other.[^relfreq_params] 
 
-Lastly, we can also exclude a manual selection of words that might be of little use to the model, or introduce bias; for example, the "fake" articles routinely include the word "via" to source external material, whereas it appears far less often in the "true" articles. We end up with 1100 words to include in our modeling.
+Lastly, we can also exclude a manual selection of words that might be of little use to the model, or introduce bias; for example, the "fake" articles routinely include the word "via" to source external material, whereas it appears far less often in the "true" articles. 
+
+We end up with 1100 distinct (and supposedly meaningful) words for the analysis. With these words, we can create a feature vector for each lemmatized article that indicates which words are contained in it. The simplest strategy is to set the vector components to either 0 or 1 for the absence or presence of each word; this will be called "binary" feature vectors below. Alternatively, we can build the vectors from either word counts or frequencies.
+
+# Modeling
+
+Finally! After cleaning the data, processing it into usable form, and transforming it into feature vectors, we have reached the stage where we can build and train some models on it.
+
+For enhanced fanciness, we will do this part in [KNIME](https://www.knime.com). The basic workflow layout is very simple: Load the feature vectors, split them into training/validation/testing sets (e.g., 60:20:20%), train some model on the training set, tweak it using the validation set, and ultimately assess its performance on the test set. We can even train all sorts of different models of our choice in the same workflow with nothing more a single keystroke.
+
+## Single Decision Tree
+
+Let's start very simple, as all things should: with a single decision tree. While not incredibly flexible as a model, it has the advantage of being very easily explainable. If we use the feature vectors that encode the frequencies of the selected words, and demand a minimum of 500 records per node, we get the following decision tree and ROC curve:
+
+{:.center-image}
+[
+![dectree-freqfeatures-500recspernode.png](/projects/fakenews_assets/dectree-freqfeatures-500recspernode.png){: width="70%"}
+](/projects/fakenews_assets/dectree-freqfeatures-500recspernode.png){:target="_blank"}
+
+{:.caption}
+Single decision tree and ROC curve (click to view full size). In the tree layout, "yes" and "no" refer to whether an article is to be classified as fake news.
+
+Some features in the tree layout are quite interesting to interpret. The first decision in classifying an article as "true" or "fake" is the lemmatized word "say". For word frequencies at or below 0.0135, the tree tends towards a "fake" classification. This tells us that any derivative forms of this word (as in "said" or "says") is much more likely to appear in the "true" articles than the "fake" ones. A quick analysis of the cleaned data before lemmatization confirms this: "said" appears almost 100000 times in the "true" news articles, but only about 25000 times in the "fake" ones (even though the latter subset is about 40% larger). Evidently, the "true" news from Reuters rely to a much higher degree on direct quotes than the "fake" news -- which isn't all that surprising. Furthermore, the appearance of "thin" as a discriminating feature is at first sight somewhat surprising, but a quick look into the "fake" data shows that there are quite a few instances of the phrase "thin skin"; and likewise, "fake" articles that include videos often feature the word "watch" (typically in all-caps).
+
+Regardless of the type of feature vector that is used ("binary", word counts or frequencies), the accuracy of the decision tree is already around 80-83% on the validation set. Not bad for a such a simple model!
 
 **To be continued...**
 
@@ -110,3 +134,5 @@ Lastly, we can also exclude a manual selection of words that might be of little 
 [^processing_code]: See [here](/code_snippets/#python-lemmatization) for implementation details.
 
 [^relfreq_params]: The occurrence frequency threshold and margin values can be regarded as hyperparameters of our models and should be subject to tuning.
+
+[^ruler_detection]: You might have heard the [story of the AI](https://menloml.com/2020/01/11/recognizing-a-ruler-instead-of-a-cancer/) that, when tasked with detecting malignant tumors in pictures of skin lesions, instead learned to recognize the rulers that had been placed next to them.
