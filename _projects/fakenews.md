@@ -113,9 +113,23 @@ Let's start very simple, as all things should: with a single decision tree. Whil
 {:.caption}
 Single decision tree and ROC curve (click to view full size). In the tree layout, "yes" and "no" refer to whether an article is to be classified as fake news.
 
-Some features in the tree layout are quite interesting to interpret. The first decision in classifying an article as "true" or "fake" is the lemmatized word "say". For word frequencies at or below 0.0135, the tree tends towards a "fake" classification. This tells us that any derivative forms of this word (as in "said" or "says") is much more likely to appear in the "true" articles than the "fake" ones. A quick analysis of the cleaned data before lemmatization confirms this: "said" appears almost 100000 times in the "true" news articles, but only about 25000 times in the "fake" ones (even though the latter subset is about 40% larger). Evidently, the "true" news from Reuters rely to a much higher degree on direct quotes than the "fake" news -- which isn't all that surprising. Furthermore, the appearance of "thin" as a discriminating feature is at first sight somewhat surprising, but a quick look into the "fake" data shows that there are quite a few instances of the phrase "thin skin"; and likewise, "fake" articles that include videos often feature the word "watch" (typically in all-caps).
+Some features in the tree layout are quite interesting to interpret. The first decision in classifying an article as "true" or "fake" is the lemmatized word "say". For word frequencies at or below 0.0135, the tree tends towards a "fake" classification. This tells us that any derivative forms of this word (as in "said" or "says") is much more likely to appear in the "true" articles than the "fake" ones. A quick analysis of the cleaned data before lemmatization confirms this: "said" appears almost 100000 times in the "true" news articles, but only about 25000 times in the "fake" ones (even though the latter subset is about 40% larger). Evidently, the "true" news from Reuters rely to a much higher degree on direct quotes than the "fake" news -- which isn't all that surprising. Furthermore, the appearance of "thin" as a discriminating feature can be explained by the widespread use of the phrase "thin skin" in the "fake" news; and likewise, articles that include videos often feature the word "watch" (typically in all-caps).
 
-Regardless of the type of feature vector that is used ("binary", word counts or frequencies), the accuracy of the decision tree is already around 80-83% on the validation set. Not bad for a such a simple model! From the "kinks" in the ROC curve however, it is apparent that the classification happens in a few rather discrete probability steps. So, let's explore some more flexible models.
+Regardless of the type of feature vector that is used ("binary", word counts or frequencies), the accuracy of the decision tree is already around 80-83% on the validation set. Not bad for a such a simple model! The "kinks" in the ROC curve however reflect the fact that the classifications happen in a few rather discrete probability steps. So, let's explore some more flexible models.
+
+## Random Forest
+
+If one decision tree is good, then more decision trees are certainly better, right? The next logical step in our modeling is therefore to create either a gradient-boosted tree ensemble or a random forest model. Let's test each option with a maximum tree depth of 10 nodes and see how the accuracies of these models evolve when we increase the number of trees. (Since tree ensembles are much more resource-consuming to train than random forests, we'll also halve the number of trees in them.)
+
+{:.center-image}
+{% include_relative fakenews_assets/randforest-nummodels-accuracy-plot.html %}{:style="font-style:normal; width:50%; height:250pt"}
+
+{:.caption style="margin-top:4pt"}
+Accuracy evolution of random forest (blue) and gradient-boosted tree ensemble (red) models with the number of trees. The arrow marks the accuracy of the previous decision tree. Note that the y axis starts at 70% for visual clarity.
+
+Some differences in baseline accuracy for single-tree models exist due to random feature selecton in the random forests and lack of control over parameters such as the minimum number of records per node in the tree ensemble. Apart from that, increasing the number of trees in each model generally increases their accuracy; no big surprise here. Unfortunately, this comes at the cost of interpretability: For a single decision tree, explaining its structure is easy; for a bundle of 50 or 100 trees, it is not. So, even though we've been able to boost the modeled accuracy, we should look for some other strategy that affords us a better performance than the single decision tree while maintaining its explainability.
+
+
 
 **To be continued...**
 
@@ -135,4 +149,4 @@ Regardless of the type of feature vector that is used ("binary", word counts or 
 
 [^relfreq_params]: The occurrence frequency threshold and margin values can be regarded as hyperparameters of our models and should be subject to tuning.
 
-[^ruler_detection]: You might have heard the [story of the AI](https://menloml.com/2020/01/11/recognizing-a-ruler-instead-of-a-cancer/) that, when tasked with detecting malignant tumors in pictures of skin lesions, instead learned to recognize the rulers that had been placed next to them.
+[^ruler_detection]: You might have heard the [story of the AI](https://menloml.com/2020/01/11/recognizing-a-ruler-instead-of-a-cancer/) that, when tasked with detecting malignant tumors in pictures of skin lesions, instead learned to recognize the rulers that doctors had placed next to them.
