@@ -129,6 +129,19 @@ Accuracy evolution of random forest (blue) and gradient-boosted tree ensemble (r
 
 Some differences in baseline accuracy for single-tree models exist due to random feature selecton in the random forests and lack of control over parameters such as the minimum number of records per node in the tree ensemble. Apart from that, increasing the number of trees in each model generally increases their accuracy; no big surprise here. Unfortunately, this comes at the cost of interpretability: For a single decision tree, explaining its structure is easy; for a bundle of 50 or 100 trees, it is not. So, even though we've been able to boost the modeled accuracy, we should look for some other strategy that affords us a better performance than the single decision tree while maintaining its explainability.
 
+## Logistic Regression
+
+Departing from the use of decision trees altogether, we will next build a logistic regression model based on our feature vectors. Such a model is, in a sense, more "quantitatively" interpretable than the decision trees, since its parameters are directly comparable by their magnitude, and have significance estimates attached to them.
+
+The latter point is also of high importance for the model building process itself, since we can eliminate highly insignificant parameters (as judged by their p scores) to increase its robustness. We can set this up as an automated loop in KNIME, initializing the regression model with all 1100 parameters and successively eliminating all parameters with $$p > 0.05$$ after each iteration. 
+
+{:.center-image}
+[
+![logreg-workflow.png](/projects/fakenews_assets/logreg-workflow.png){: width="70%"}
+](/projects/fakenews_assets/logreg-workflow.png){:target="_blank"}
+
+{:.caption}
+Simple, isn't it?
 
 
 **To be continued...**
