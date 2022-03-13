@@ -133,7 +133,7 @@ Some differences in baseline accuracy for single-tree models exist due to random
 
 Departing from the use of decision trees altogether, we will next build a logistic regression model based on our feature vectors. Such a model is, in a sense, more "quantitatively" interpretable than the decision trees, since its parameters are directly comparable by their magnitude, and have significance estimates attached to them.
 
-The latter point is also of high importance for the model building process itself, since we can eliminate highly insignificant parameters (as judged by their p scores) to increase its robustness. We can set this up as an automated loop in KNIME, initializing the regression model with all 1100 parameters and successively eliminating all parameters with $$p > 0.05$$ after each iteration. 
+The latter point is also of high importance for the model building process itself, since we can eliminate highly insignificant parameters as judged by their *p* values to increase its robustness. We can set this up as an automated loop in KNIME, initializing the regression model with all 1100 parameters and successively eliminating all parameters with $$p > 0.05$$ after each iteration. To improve convergence, we'll also only discard 50 parameters at a time.
 
 {:.center-image}
 [
@@ -142,6 +142,16 @@ The latter point is also of high importance for the model building process itsel
 
 {:.caption}
 Simple, isn't it?
+
+After 21 iterations of this loop, we are left with 131 words that are deemed to be significant:
+
+{:.center-image}
+[
+![logreg-wordcloud.png](/projects/fakenews_assets/logreg-wordcloud.png){: width="70%"}
+](/projects/fakenews_assets/logreg-wordcloud.png){:target="_blank"}
+
+{:.caption}
+Blue words classify as "true" articles, orange words as "fake" ones; word size correlates with parameter strength. Made using [wordclous.com](https://www.wordclouds.com).
 
 
 **To be continued...**
