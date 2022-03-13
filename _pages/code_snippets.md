@@ -15,7 +15,7 @@ On this page, you will find various sample code used in the example projects. Cl
 
 # Fake News and Dirty Data
 
-Some exemplary code snippets from the "[fake news](/projects/fakenews)" project:
+Some exemplary code snippets from the "[fake news](/projects/1_fakenews)" project:
 
 ## Python: Text Cleaning
 
@@ -127,7 +127,7 @@ def lemmatize(string):
 
 # Mortality Rates in Alberta
 
-Some exemplary code snippets from the "[mortality rates](/projects/ab_mortality)" project:
+Some exemplary code snippets from the "[mortality rates](/projects/2_ab_mortality)" project:
 
 ## Excel: Month Name Lookup
 
@@ -248,7 +248,7 @@ fig.show()
 
 # "How Does a Bike-Share Navigate Speedy Success?"
 
-Some exemplary code snippets from the "[bike-share](/projects/bikeshare/)" project:
+Some exemplary code snippets from the "[bike-share](/projects/3_bikeshare/)" project:
 
 ## SQL: Station Locations
 
