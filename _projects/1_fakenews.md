@@ -143,7 +143,7 @@ The latter point is also of high importance for the model building process itsel
 {:.caption}
 Simple, isn't it?
 
-After 21 iterations of this loop, we are left with 131 words that are deemed to be significant:
+After 21 iterations of this loop, we are left with 130 words that are deemed to be significant:
 
 {:.center-image}
 [
