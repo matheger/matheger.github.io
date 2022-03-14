@@ -124,7 +124,7 @@ If one decision tree is good, then more decision trees are certainly better, rig
 {:.center-image}
 {% include_relative fakenews_assets/randforest-nummodels-accuracy-plot.html %}{:style="font-style:normal; width:50%; height:250pt"}
 
-{:.caption }
+{:.caption style="margin-top:4pt"}
 Accuracy evolution of random forest (blue) and gradient-boosted tree ensemble (red) models with the number of trees. The arrow marks the accuracy of the previous decision tree. Note that the y axis starts at 70% for visual clarity.
 
 Some differences in baseline accuracy for single-tree models exist due to random feature selecton in the random forests and lack of control over parameters such as the minimum number of records per node in the tree ensemble. Apart from that, increasing the number of trees in each model generally increases their accuracy; no big surprise here. Unfortunately, this comes at the cost of interpretability: For a single decision tree, explaining its structure is easy; for a bundle of 50 or 100 trees, it is not. So, even though we've been able to boost the modeled accuracy, we should look for some other strategy that affords us a better performance than the single decision tree while maintaining its explainability.
