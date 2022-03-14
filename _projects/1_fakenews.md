@@ -87,9 +87,9 @@ Through these processing steps, a post-cleanup article text such as this...
 
 ## Feature Selection
 
-With the articles in their "condensed" form, we can start selecting words to use in the model training process. Our basic assumption will be that "true" and "fake" articles differ substantially in their writing style, and that the probability of some article fitting into either category can be estimated based on the presence (or, perhaps, absence) of certain keywords. In order to find these words, we first need to create a count of *all* words in *all* articles for each category, and then calculate the relative frequency with which they occur. Based on the resulting occurrence frequencies, we define a threshold value of 0.0001 and include only words with frequencies at or above this threshold so as to limit our feature set to a manageable size.
+With the articles in their "condensed" form, we can start selecting words to use in the model training process. Our basic assumption will be that "true" and "fake" articles differ substantially in their writing style, and that the probability of some article fitting into either category can be estimated based on the presence (or absence) of certain keywords. In order to find these words, we first need to create a count of *all* words in *all* articles for each category, and then calculate the relative frequency with which they occur. Based on the results from these steps, we can define a reasonable threshold value of 0.0001 and include only words with frequencies at or above this threshold so as to limit our feature set to a manageable size.
 
-Based on our assumption of word choices, we also know that words which are equally likely to appear in both "true" and "fake" articles will not serve any discriminating purpose in our model. Thus, we can further reduce our feature set by excluding all words in which the ratio of occurrence frequencies between the two subsets is within a certain margin, and we choose all words which are at least twice as likely to appear in one category than the other.[^relfreq_params] 
+However, we also know that words which are equally likely to appear in both "true" and "fake" articles will not serve any discriminating purpose in our models. We can therefore further reduce our feature set by excluding all words in which the ratio of occurrence frequencies between the two subsets is within a certain margin, and we choose all words which are at least twice as likely to appear in one category than the other.[^relfreq_params] 
 
 Lastly, we can also exclude a manual selection of words that might be of little use to the model, or introduce bias; for example, the "fake" articles routinely include the word "via" to source external material, whereas it appears far less often in the "true" articles. 
 
@@ -143,7 +143,7 @@ The latter point is also of high importance for the model building process itsel
 {:.caption}
 Simple, isn't it?
 
-After 21 iterations of this loop, we are left with 131 words that are deemed to be significant, yielding about 93% accuracy on the validation set. Of the selected features, 54 have positive coefficients (i.e., they indicate "fake" articles), and 77 have negative coefficients (indicating "true" articles). The five strongest "fake" words are" gop", "hill", "watch", "know" and "like"; and on the "true" side, "say", "minister", "trade", "lead" and "representative".[^logreg_words]
+After 21 iterations of this loop, we are left with 131 words that are deemed to be significant, yielding about 93% accuracy on the validation set. Of the selected features, 54 have positive coefficients (i.e., they indicate "fake" articles), and 77 have negative coefficients (indicating "true" articles). The five strongest "fake" words are *gop*, *hill*, *watch*, *know* and *like*; and on the "true" side, *say*, *minister*, *trade*, *lead* and *representative*.[^logreg_words]
 
 {:.center-image}
 [
