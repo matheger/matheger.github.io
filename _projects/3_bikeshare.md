@@ -8,7 +8,7 @@ description: Analysis of publicly available data from a bike sharing company
 * toc
 {:toc}
 
-{:.center-image}
+{:.center-image style="margin-top:50pt"}
 ![](/projects/bikeshare_assets/bikeshare_logo.svg){: height="150px"}
 
 # Preamble

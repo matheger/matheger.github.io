@@ -8,7 +8,7 @@ description: Analysis of mortality data for Alberta before and during the Covid-
 * toc
 {:toc}
 
-{:.center-image}
+{:.center-image style="margin-top:50pt"}
 ![](/projects/ab_mortality_assets/23312_lores_mod.png){: height="150px"}
 
 # Preamble
