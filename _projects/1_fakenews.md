@@ -151,7 +151,7 @@ After 21 iterations of this loop, we are left with 131 words that are deemed to 
 ](/projects/fakenews_assets/logreg-wordcloud.png){:target="_blank"}
 
 {:.caption}
-Blue words tend to classify as "true" articles, orange words as "fake" ones; word size and colour saturation indicate effect strength. Made using [wordclous.com](https://www.wordclouds.com).
+Blue words tend to classify as "true" articles, orange words as "fake" ones; word size and colour saturation indicate effect strength. Made using [wordclouds.com](https://www.wordclouds.com).
 
 
 **To be continued...**
