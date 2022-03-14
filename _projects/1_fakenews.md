@@ -143,7 +143,7 @@ The latter point is also of high importance for the model building process itsel
 {:.caption}
 Simple, isn't it?
 
-After 21 iterations of this loop, we are left with 131 words that are deemed to be significant, yielding about 93% accuracy on the validation set. Of the selected features, 54 have positive coefficients (i.e., they indicate "fake" articles), and 77 have negative coefficients (indicating "true" articles). The five strongest "fake" words are *gop*, *hill*, *watch*, *know* and *like*; and on the "true" side, *say*, *minister*, *trade*, *lead* and *representative*.[^logreg_words]
+After 21 iterations of this loop, we are left with 131 words that are deemed to be significant, yielding about 93% accuracy on the validation set. Of the selected features, 54 have positive coefficients (i.e., they indicate "fake" articles), and 77 have negative coefficients (indicating "true" articles). The five strongest "fake" words are *gop*, *hill*, *watch*, *know* and *like*; and on the "true" side, *say*, *minister*, *trade*, *lead* and *representative*.[^logreg_words] 
 
 {:.center-image}
 [
@@ -153,6 +153,15 @@ After 21 iterations of this loop, we are left with 131 words that are deemed to 
 {:.caption}
 Blue words tend to classify as "true" articles, orange words as "fake" ones; word size and colour saturation indicate effect strength. Made using [wordclouds.com](https://www.wordclouds.com).
 
+With the numeric parameters from the logistic regression model, we can do another experiment: How does the accuracy of the model evolve if we only include a certain amount of the strongest parameters? In other words: What performance impact do we get from ignoring all signal words except for the top X% of positive and the negative parameters? This is easy to calculate by zeroing the input feature vectors for all excluded regressors and calculating the resulting performance statistics for the validation set. 
+
+{:.center-image}
+{% include_relative fakenews_assets/logreg-num-features-plot.html %}{:style="font-style:normal; width:50%; height:250pt"}
+
+{:.caption style="margin-top:4pt"}
+Accuracy evolution of the logistic regression model with the amount of included features. For each data point, the given percentage of strongest parameters (positive and negative each) is retained, all other input features are zeroed.
+
+Unsurprisingly, ignoring many of the "significant" words decreases the model performance -- but not as strongly as we might expect. At the 5% mark, only the top two positive (*say*, *minister*) and top three negative (*gop*, *hill*, *watch*) features are included; yet the model still manages to predict three out of any four articles in the validation set correctly! Another point of interest are the accuracy "plateaus" around the 30% and 60% areas. Apparently, the combination of features that are selected at these percentages lead to essentially no net gain in model performance, but finding detailed explanations for this effect would require in-depth analyses that are beyond our scope here.
 
 **To be continued...**
 
@@ -174,4 +183,4 @@ Blue words tend to classify as "true" articles, orange words as "fake" ones; wor
 
 [^ruler_detection]: You might have heard the [story of the AI](https://menloml.com/2020/01/11/recognizing-a-ruler-instead-of-a-cancer/) that, when tasked with detecting malignant tumors in pictures of skin lesions, instead learned to recognize the rulers that doctors had placed next to them.
 
-[^logreg_words]: We've already seen that "say", "lead" and "watch" are good discriminators in the decision tree model.
+[^logreg_words]: We've already seen that "say", "lead" and "watch" are good discriminators in the decision tree model. The word "hill" as a strong indicator for "fake" articles may seem odd at first, but is based on several contexts: The term "capitol hill"; the names of several people; and references to ["The Hill"](https://thehill.com).
