@@ -10,7 +10,7 @@ description: The kaggle "Fake News" dataset
 {:toc}
 
 {:.center-image}
-![](){: height="150px"}
+![](/projects/fakenews_assets/logo.png){: height="150px"}
 
 # Preamble
 
