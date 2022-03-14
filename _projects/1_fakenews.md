@@ -119,7 +119,7 @@ Regardless of the type of feature vector that is used ("binary", word counts or 
 
 ## Random Forest
 
-If one decision tree is good, then more decision trees are certainly better, right? The next logical step in our modeling is therefore to create either a gradient-boosted tree ensemble or a random forest model. Let's test each option with a maximum tree depth of 10 nodes and see how the accuracies of these models evolve when we increase the number of trees. (Since tree ensembles are much more resource-consuming to train than random forests, we'll also halve the number of trees in them.)
+If one decision tree is good, then more decision trees are certainly better, right? The next logical step in our modeling is therefore to create either a gradient-boosted tree ensemble or a random forest model. Let's test each option with a maximum tree depth of 10 nodes and see how the accuracies of these models evolve when we increase the number of trees. (Since tree ensembles are much more resource-consuming to train than random forests, we'll also halve the number of trees in them compared to the random forests.)
 
 {:.center-image}
 {% include_relative fakenews_assets/randforest-nummodels-accuracy-plot.html %}{:style="font-style:normal; width:50%; height:250pt"}
@@ -143,7 +143,7 @@ The latter point is also of high importance for the model building process itsel
 {:.caption}
 Simple, isn't it?
 
-After 21 iterations of this loop, we are left with 130 words that are deemed to be significant:
+After 21 iterations of this loop, we are left with 131 words that are deemed to be significant, yielding about 93% accuracy on the validation set. Of the selected features, 54 have positive coefficients (i.e., they indicate "fake" articles), and 77 have negative coefficients (indicating "true" articles). The five strongest "fake" words are" gop", "hill", "watch", "know" and "like"; and on the "true" side, "say", "minister", "trade", "lead" and "representative".[^logreg_words]
 
 {:.center-image}
 [
@@ -151,7 +151,7 @@ After 21 iterations of this loop, we are left with 130 words that are deemed to 
 ](/projects/fakenews_assets/logreg-wordcloud.png){:target="_blank"}
 
 {:.caption}
-Blue words classify as "true" articles, orange words as "fake" ones; word size correlates with parameter strength. Made using [wordclous.com](https://www.wordclouds.com).
+Blue words tend to classify as "true" articles, orange words as "fake" ones; word size and colour saturation indicate effect strength. Made using [wordclous.com](https://www.wordclouds.com).
 
 
 **To be continued...**
@@ -173,3 +173,5 @@ Blue words classify as "true" articles, orange words as "fake" ones; word size c
 [^relfreq_params]: The occurrence frequency threshold and margin values can be regarded as hyperparameters of our models and should be subject to tuning.
 
 [^ruler_detection]: You might have heard the [story of the AI](https://menloml.com/2020/01/11/recognizing-a-ruler-instead-of-a-cancer/) that, when tasked with detecting malignant tumors in pictures of skin lesions, instead learned to recognize the rulers that doctors had placed next to them.
+
+[^logreg_words]: We've already seen that "say", "lead" and "watch" are good discriminators in the decision tree model.
