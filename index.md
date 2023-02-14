@@ -19,4 +19,3 @@ If you are familiar with the Python programming language, you might also appreci
 
 {:.footnote style="color: #999;"}
 Please note that I do not include personal details or contact information on this site for privacy reasons. If you are reading this, chances are you have all my contact details already. In that case, please feel free to reach out with questions or comments!
-
